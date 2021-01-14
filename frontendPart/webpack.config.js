@@ -8,10 +8,29 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ["babel-loader", "eslint-loader"]
-            }
-        ]
-    },
+                use: ['babel-loader', 'eslint-loader']
+            },
+            {
+                test: /\.css$/i,
+                exclude: /node_modules/,
+                use: [
+                  'style-loader', 
+                  {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                    },
+                  },
+                ],
+              },
+              {
+                test: /\.(woff|woff2|jpg|png)$/,
+                use: {
+                  loader: 'url-loader',
+                },
+              },
+            ],
+          },
     resolve: {
         extensions: ['*', '.js', '.jsx']
     },
