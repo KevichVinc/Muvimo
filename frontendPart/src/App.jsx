@@ -1,17 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
-import style from './style.css';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
+import Settings from './components/Settings/Settings';
+import Portfolio from './components/Portfolio/Portfolio';
+
+import style from './style.module.css';
 import tracer from './assets/img/Tracer.png';
 
-export default function App({ title }) {
-  App.propTypes = {
-    title: PropTypes.string.isRequired,
-  };
+export default function App() {
   return (
-    <div>
-      <div className={style.title}>{title}</div>
-      <img src={tracer} alt="Hot bitch" />
+    <div className={style.appWrapper}>
+      <Header />
+      <Navbar />
+      <div className={style.appContentWrapper}>
+        <Route path="/profile" render={() => <Profile />} />
+        <Route path="/settings" render={() => <Settings />} />
+        <Route path="/portfolio" render={() => <Portfolio />} />
+        <img src={tracer} alt="Tracer from Overwatch" />
+      </div>
     </div>
   );
 }
