@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 
-const title = 'React with Webpack and Babel and we doomed';
-
 ReactDOM.render(
-  <App title={title} />,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('app'),
 );
 
