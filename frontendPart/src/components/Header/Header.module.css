@@ -2,3 +2,8 @@
   grid-area: h;
   background-color: #708090;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}

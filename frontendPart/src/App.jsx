@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 import Portfolio from './components/Portfolio/Portfolio';
+import Feed from './components/Feed/Feed';
 
 import style from './style.module.css';
 import tracer from './assets/img/Tracer.png';
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/profile" render={() => <Profile />} />
         <Route path="/settings" render={() => <Settings />} />
         <Route path="/portfolio" render={() => <Portfolio />} />
+        <Route path="/feed" render={() => <Feed />} />
         <img src={tracer} alt="Tracer from Overwatch" />
       </div>
     </div>
