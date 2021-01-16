@@ -1,0 +1,20 @@
+.main {
+  display: grid;
+  grid-template-areas:
+    'fullname'
+    'about'
+    'counters';
+  grid-template-rows: 1fr 4fr 2fr;
+  grid-gap: 5px;
+}
+
+.fullname {
+  grid-area: fullname;
+}
+
+.about {
+  grid-area: about;
+}
+.counters {
+  grid-area: counters;
+}

@@ -1,0 +1,28 @@
+.main {
+  display: grid;
+  grid-template-areas:
+    'avatarbox profileinfo'
+    'friends addpost'
+    'portfolio posts'
+    'groups posts';
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.avatarbox {
+  grid-area: avatarbox;
+}
+.profileinfo {
+  grid-area: profileinfo;
+}
+.friends {
+  grid-area: friends;
+  display: subgrid;
+  grid-template-areas:
+    'o'
+    'f';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
