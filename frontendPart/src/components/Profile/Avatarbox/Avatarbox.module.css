@@ -1,0 +1,24 @@
+.main {
+  display: grid;
+  grid-template-areas:
+    'ava ava'
+    'editphoto editprofile';
+  grid-template-rows: 8fr 2fr;
+  grid-template-columns: 8fr 2fr;
+  grid-gap: 5px;
+}
+
+.ava {
+  grid-area: ava;
+}
+
+.ava img {
+  width: 100%;
+}
+
+.editphoto {
+  grid-area: editphoto;
+}
+.editprofile {
+  grid-area: editprofile;
+}
