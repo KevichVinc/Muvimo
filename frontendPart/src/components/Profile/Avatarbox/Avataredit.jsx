@@ -1,15 +1,9 @@
 import React from 'react';
-import style from './Avatarbox.module.css';
+import style from './Avataredit.module.css';
 
-export default function Avatarbox() {
+export default function Avataredit() {
   return (
     <div className={style.main}>
-      <div className={style.ava}>
-        <img
-          src="https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg"
-          alt="ava"
-        />
-      </div>
       <div className={style.editphoto}>
         <button type="submit">Edit Photo</button>
       </div>

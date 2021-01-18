@@ -6,15 +6,42 @@
     'counters';
   grid-template-rows: 1fr 4fr 2fr;
   grid-gap: 5px;
+
+  border-style: solid;
+  border-color: #708090;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+.main div div {
+  margin: 5px;
 }
 
 .fullname {
   grid-area: fullname;
+  border-bottom: 2px solid #708090;
 }
 
 .about {
   grid-area: about;
+  display: grid;
+  grid-auto-rows: min-content;
+  justify-content: start;
+  border-bottom: 2px solid #708090;
 }
+
 .counters {
+  display: grid;
+  align-items: center;
+  grid-template-areas: 'audioCounter photoCounter videoCounter projectsCounter';
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-area: counters;
+}
+
+.counters button {
+  justify-content: center;
+  margin: 15px;
+  border: none;
+  outline: none;
+  background: none;
 }

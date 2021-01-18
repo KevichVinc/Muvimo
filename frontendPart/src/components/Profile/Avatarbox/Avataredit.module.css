@@ -1,6 +1,6 @@
 .main {
   display: grid;
-  grid-template-areas: 'ava ava';
+  grid-template-areas: 'editphoto editprofile ';
   grid-template-columns: 2fr 2fr;
   grid-gap: 5px;
 }
@@ -10,14 +10,6 @@
   border-color: #708090;
   border-width: 5px;
   border-radius: 25px;
-}
-
-.ava {
-  grid-area: ava;
-}
-
-.ava img {
-  width: 100%;
 }
 
 .main div {

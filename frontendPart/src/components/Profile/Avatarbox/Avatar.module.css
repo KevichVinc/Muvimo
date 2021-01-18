@@ -19,23 +19,3 @@
 .ava img {
   width: 100%;
 }
-
-.main div {
-  justify-self: center;
-  align-self: center;
-}
-
-.main div button {
-  margin: 15%;
-  border: none;
-  outline: none;
-  background: none;
-}
-
-.editphoto {
-  grid-area: editphoto;
-}
-
-.editprofile {
-  grid-area: editprofile;
-}

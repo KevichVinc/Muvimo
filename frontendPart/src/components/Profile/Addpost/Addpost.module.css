@@ -1,0 +1,48 @@
+.main {
+  display: grid;
+  align-items: center;
+  grid-template-areas: 'inputArea addImg addVideo addAudio ';
+  grid-template-columns: 5fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+
+  border-style: solid;
+  border-color: #708090;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+.main div {
+  justify-self: center;
+  align-self: center;
+}
+
+.main div button {
+  margin: 15px;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.inputArea {
+  grid-area: inputArea;
+}
+
+#fname {
+  width: 300px;
+  height: 25px;
+}
+
+.addImg {
+  grid-area: addImg;
+  border-left: 2px solid #708090;
+}
+
+.addVideo {
+  grid-area: addVideo;
+  border-left: 2px solid #708090;
+}
+
+.addAudio {
+  grid-area: addAudio;
+  border-left: 2px solid #708090;
+}
