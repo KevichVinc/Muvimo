@@ -1,0 +1,42 @@
+.main {
+  display: grid;
+  grid-template-areas:
+    'authorInfo'
+    'postText'
+    'socButtons';
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-gap: 5px;
+
+  margin: 10px;
+
+  border-style: solid;
+  border-color: #708090;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+.main div div {
+  margin: 10px;
+}
+
+.authorInfo {
+  grid-area: authorInfo;
+  border-bottom: 2px solid #708090;
+}
+
+.postText {
+  grid-area: postText;
+  border-bottom: 2px solid #708090;
+}
+
+.socButtons {
+  grid-area: socButtons;
+}
+
+.counters button {
+  justify-content: center;
+  margin: 15px;
+  border: none;
+  outline: none;
+  background: none;
+}
