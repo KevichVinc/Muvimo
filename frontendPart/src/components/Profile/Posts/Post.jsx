@@ -21,9 +21,9 @@ export default function Post() {
         </div>
       </div>
       <div className={style.counters}>
-        <button type="submit">audioCounter</button>
-        <button type="submit">photoCounter</button>
-        <button type="submit">videoCounter</button>
+        <button type="submit">Like</button>
+        <button type="submit">Comment</button>
+        <button type="submit">Repost</button>
       </div>
     </div>
   );
