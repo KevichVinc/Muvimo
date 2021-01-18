@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './Profile.module.css';
 
-// import Avatarbox from './Avatarbox/Avatarbox';
 import Avatar from './Avatarbox/Avatar';
 import Avataredit from './Avatarbox/Avataredit';
 import Infobox from './Infobox/Infobox';
