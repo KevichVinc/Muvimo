@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import Settings from './components/Settings/Settings';
+import Profile from './pages/Profile/Profile';
+import Settings from './pages/Settings/Settings';
 import Portfolio from './components/Portfolio/Portfolio';
 import Feed from './components/Feed/Feed';
 
