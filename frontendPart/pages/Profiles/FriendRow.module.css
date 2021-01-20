@@ -1,0 +1,42 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-areas: 'profilePhoto nameAndMessage quickMenu';
+  background-color: brown;
+  grid-gap: 10px;
+  border-bottom: 2px solid #708090;
+  margin: 5px;
+  border-width: 3px;
+  border-radius: 25px;
+}
+
+.profilePhoto {
+  display: grid;
+  justify-self: center;
+  grid-area: profilePhoto;
+  width: 100px;
+  margin: 3px;
+}
+.nameAndMessage {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-area: nameAndMessage;
+  color: white;
+}
+.nameAndMessage button {
+  width: 80px;
+  border-radius: 20px;
+  margin-bottom: 3px;
+}
+.quickMenu {
+  justify-self: end;
+  width: 80px;
+  height: 40px;
+  grid-area: quickMenu;
+}
+
+.quickMenu button {
+  background: none;
+  border: none;
+  color: white;
+}
