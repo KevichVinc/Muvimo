@@ -7,8 +7,8 @@ export default function Navbar() {
   return (
     <nav className={style.nav}>
       <div className={style.item}>
-        <NavLink to="/profile" activeClassName={style.active}>
-          Profile
+        <NavLink to="/profiles" activeClassName={style.active}>
+          Profiles
         </NavLink>
       </div>
       <div className={style.item}>
