@@ -6,8 +6,9 @@ export const currentInputValue = (inputValue) => {
     text: inputValue,
   };
 };
-export const loadProfiles = () => {
+export const loadProfilesFromDb = (jsonState) => {
   return {
     type: types.LOAD_PROFILES,
+    result: jsonState,
   };
 };

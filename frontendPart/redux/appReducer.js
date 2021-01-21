@@ -1,50 +1,7 @@
 import * as types from './actionTypes';
 
 const initialState = {
-  profiles: [
-    {
-      img:
-        'https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg',
-      firstName: 'Ninja',
-      lastName: 'Ninjevich',
-    },
-    {
-      img:
-        'https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg',
-      firstName: 'Suka',
-      lastName: 'Sukevich',
-    },
-    {
-      img:
-        'https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg',
-      firstName: 'Danil',
-      lastName: 'Danilevich',
-    },
-    {
-      img:
-        'https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg',
-      firstName: 'Popka',
-      lastName: 'Popkevich',
-    },
-    {
-      img:
-        'https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg',
-      firstName: 'Jopa',
-      lastName: 'Jopevich',
-    },
-    {
-      img:
-        'https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg',
-      firstName: 'Siska',
-      lastName: 'Siskevich',
-    },
-    {
-      img:
-        'https://icon-library.com/images/icon-avatar/icon-avatar-16.jpg',
-      firstName: 'Chleno',
-      lastName: 'Chlenevich',
-    },
-  ],
+  profiles: [],
   addPost: {
     currentInput: '',
   },
@@ -56,6 +13,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         addPost: { currentInput: action.text },
+      };
+    case types.LOAD_PROFILES:
+      return {
+        ...state,
+        profiles: action.result,
       };
     default:
       return state;
