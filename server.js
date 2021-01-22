@@ -3,10 +3,22 @@ const http = require('http');
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: ['http://localhost:8080'],
+    optionsSuccessStatus: 200,
+  }),
+);
+app.use(
+  morgan(
+    ':method :url :status :res[content-length] - :response-time ms',
+  ),
+);
 app.use(bodyParser.json({ limit: '50mb', extended: true }));
 
 const db = mongoose.connection;

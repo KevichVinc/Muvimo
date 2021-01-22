@@ -8,9 +8,11 @@ import * as appAC from '../../redux/actionCreators';
 export default function Profiles() {
   const dispatch = useDispatch();
   const profiles = useSelector((state) => state.profiles);
-
   useEffect(() => {
-    axios.get('/profiles');
+    (async () => {
+      const json = await axios.get('http://localhost:5000/profiles');
+      dispatch(appAC.loadProfilesFromDb(json.data.profiles));
+    })();
   }, []);
 
   return (
@@ -22,7 +24,6 @@ export default function Profiles() {
           lastName={item.lastName}
         />
       ))}
-      <button type="submit">Load Profiles</button>
     </div>
   );
 }
