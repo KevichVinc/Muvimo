@@ -11,7 +11,7 @@ export default function FriendRow(props) {
   const { img, firstName, lastName } = props;
   return (
     <div className={style.main}>
-      <img className={style.profilePhoto} src={img} alt="ava" />
+      <img className={style.profilePhoto} src={img} alt="ava-img" />
       <div className={style.nameAndMessage}>
         <div>{`${firstName} ${lastName}`}</div>
         <button type="submit">Send Message</button>
