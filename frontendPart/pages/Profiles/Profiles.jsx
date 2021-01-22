@@ -10,8 +10,12 @@ export default function Profiles() {
   const profiles = useSelector((state) => state.profiles);
   useEffect(() => {
     (async () => {
-      const json = await axios.get('http://localhost:5000/profiles');
-      dispatch(appAC.loadProfilesFromDb(json.data.profiles));
+      try {
+        const json = await axios.get('kill/profiles');
+        dispatch(appAC.loadProfilesFromDb(json.data.profiles));
+      } catch {
+        alert('not connected');
+      }
     })();
   }, []);
 
