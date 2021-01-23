@@ -4,7 +4,12 @@ const userSchema = new Schema({
   firstName: String,
   lastName: String,
   friends: [String],
-  age: { type: Number, required: true },
+  about: {
+    city: String,
+    skills: [String],
+    favorites: [String],
+  },
+  age: String,
   img: String,
 });
 

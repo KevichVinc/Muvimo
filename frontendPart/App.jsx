@@ -7,6 +7,8 @@ import Profiles from './pages/Profiles/Profiles';
 import Settings from './pages/Settings/Settings';
 import Portfolio from './components/Portfolio/Portfolio';
 import Feed from './components/Feed/Feed';
+import NewUserForm from './pages/NewUserForm/NewUserForm';
+import Profile from './pages/Profile/Profile';
 
 import style from './style.module.css';
 
@@ -20,6 +22,8 @@ export default function App() {
         <Route path="/settings" render={() => <Settings />} />
         <Route path="/portfolio" render={() => <Portfolio />} />
         <Route path="/feed" render={() => <Feed />} />
+        <Route path="/newprofile" render={() => <NewUserForm />} />
+        <Route path="/myprofile" render={() => <Profile />} />
       </div>
     </div>
   );
