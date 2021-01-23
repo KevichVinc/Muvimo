@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  devtool: 'source-map',
   entry: path.resolve(__dirname, 'index.jsx'),
   module: {
     rules: [
@@ -40,6 +41,10 @@ module.exports = {
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
+    proxy: {
+      '/api': 'http://localhost:5000',
+    },
+    port: 3000,
     contentBase: path.resolve(__dirname, './'),
     hot: true,
     historyApiFallback: true,

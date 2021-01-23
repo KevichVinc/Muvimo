@@ -6,8 +6,9 @@ export const currentInputValue = (inputValue) => {
     text: inputValue,
   };
 };
-export const loadProfiles = () => {
+export const loadProfilesFromDb = (loadedProfiles) => {
   return {
     type: types.LOAD_PROFILES,
+    result: loadedProfiles,
   };
 };
