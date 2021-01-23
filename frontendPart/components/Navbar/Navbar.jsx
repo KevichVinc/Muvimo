@@ -26,6 +26,16 @@ export default function Navbar() {
           Feed
         </NavLink>
       </div>
+      <div className={style.item}>
+        <NavLink to="/newprofile" activeClassName={style.active}>
+          Create new profile
+        </NavLink>
+      </div>
+      <div className={style.item}>
+        <NavLink to="/myprofile" activeClassName={style.active}>
+          My profile
+        </NavLink>
+      </div>
     </nav>
   );
 }

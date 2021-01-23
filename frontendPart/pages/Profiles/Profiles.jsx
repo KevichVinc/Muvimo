@@ -11,7 +11,7 @@ export default function Profiles() {
   useEffect(() => {
     (async () => {
       try {
-        const json = await axios.get('kill/profiles');
+        const json = await axios.get('api/profiles');
         dispatch(appAC.loadProfilesFromDb(json.data.profiles));
       } catch {
         alert('not connected');

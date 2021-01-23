@@ -42,7 +42,7 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     proxy: {
-      '/kill': 'http://localhost:5000',
+      '/api': 'http://localhost:5000',
     },
     port: 3000,
     contentBase: path.resolve(__dirname, './'),
