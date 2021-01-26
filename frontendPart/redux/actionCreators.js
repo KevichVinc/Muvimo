@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 export const currentInputValue = (inputValue) => {
   return {
@@ -47,10 +48,26 @@ export const currentFormFilter = (inputValue, id) => {
     };
   }
 };
+export const onLoading = () => {
+  return async (dispatch) => {
+    const json = await axios.get('api/profiles');
+    dispatch(loadProfilesFromDb(json.data.profiles));
+  };
+};
+
 export const loadProfilesFromDb = (loadedProfiles) => {
   return {
     type: types.LOAD_PROFILES,
     result: loadedProfiles,
+  };
+};
+
+export const deleteThisProfile = (profileId) => {
+  return async (dispatch) => {
+    await axios.post('api/profiles/delete', {
+      profileId,
+    });
+    dispatch(onLoading());
   };
 };
 

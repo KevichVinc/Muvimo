@@ -34,6 +34,12 @@
   height: 40px;
   grid-area: quickMenu;
 }
+.deleteButton {
+  justify-self: start;
+  width: 80px;
+  height: 40px;
+  grid-area: quickMenu;
+}
 
 .quickMenu button {
   background: none;
