@@ -90,10 +90,7 @@ export default function appReducer(state = initialState, action) {
         ...state,
         newUserForm: {
           ...state.newUserForm,
-          about: {
-            ...state.newUserForm.about,
-            imgInput: action.inputValue,
-          },
+          imgInput: action.inputValue,
         },
       };
     case types.PROFILE_CREATED:
