@@ -19,7 +19,6 @@ app.use(morgan('dev'));
 app.use(bodyParser.json({ limit: '50mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use('/api/profiles', usersRouter);
-app.use('/api/profiles/new', usersRouter);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

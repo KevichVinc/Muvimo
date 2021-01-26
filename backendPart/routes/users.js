@@ -8,6 +8,10 @@ router.get('/', async (req, res) => {
   const profiles = await User.find();
   res.json({ profiles });
 });
+router.post('/delete', async (req, res) => {
+  await User.deleteOne({ _id: req.body.profileId });
+  res.send(200);
+});
 
 router.post('/new', async (req, res) => {
   await User.create({
