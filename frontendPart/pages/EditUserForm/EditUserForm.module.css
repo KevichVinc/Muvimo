@@ -1,0 +1,55 @@
+.main {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    'avatar profileinfo'
+    'avataredit addpost'
+    'friends posts'
+    'friendsOnline posts'
+    'portfolio posts'
+    'groups posts';
+  grid-auto-rows: min-content;
+  grid-template-columns: 2fr 4fr;
+  grid-gap: 10px;
+}
+
+.avatar {
+  grid-area: avatar;
+}
+
+.avataredit {
+  grid-area: avataredit;
+}
+
+.profileinfo {
+  grid-area: profileinfo;
+}
+
+.addpost {
+  grid-area: addpost;
+}
+
+.portfolio {
+  grid-area: portfolio;
+}
+
+.friends {
+  grid-area: friends;
+  display: subgrid;
+  grid-template-areas:
+    'o'
+    'f';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+.friendsOnline {
+  grid-area: friendsOnline;
+  display: subgrid;
+  grid-template-areas:
+    'o'
+    'f';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}

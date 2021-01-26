@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import FriendRow from './FriendRow';
 import style from './Profiles.module.css';
+
 import * as appAC from '../../redux/actionCreators';
 
 export default function Profiles() {
@@ -17,6 +18,7 @@ export default function Profiles() {
           firstName={item.firstName}
           lastName={item.lastName}
           profileId={item._id}
+          key={item._id}
         />
       ))}
     </div>
