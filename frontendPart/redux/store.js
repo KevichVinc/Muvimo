@@ -1,11 +1,17 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import appReducer from './appReducer';
+import editProfileReducer from './editProfileReducer';
+
+const allReducers = combineReducers({
+  editProfile: editProfileReducer,
+  app: appReducer,
+});
 
 const store = createStore(
-  appReducer,
+  allReducers,
   composeWithDevTools(applyMiddleware(thunk)),
 );
 

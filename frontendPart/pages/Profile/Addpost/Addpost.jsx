@@ -7,7 +7,7 @@ import * as appAC from '../../../redux/actionCreators';
 export default function Addpost() {
   const dispatch = useDispatch();
   const inputValue = useSelector(
-    (state) => state.addPost.currentInput,
+    (state) => state.app.addPost.currentInput,
   );
   const sendInput = (e) =>
     dispatch(appAC.currentInputValue(e.target.value));
