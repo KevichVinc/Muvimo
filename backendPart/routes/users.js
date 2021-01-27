@@ -34,4 +34,22 @@ router.post('/new', async (req, res) => {
   res.sendStatus(200);
 });
 
+router.post('/edit', async (req, res) => {
+  await User.updateOne(
+    { _id: req.body.currentUserForm.id },
+    {
+      firstName: req.body.currentUserForm.firstNameInput,
+      lastName: req.body.currentUserForm.lastNameInput,
+      age: req.body.currentUserForm.ageInput,
+      about: {
+        city: req.body.currentUserForm.about.cityInput,
+        skills: req.body.currentUserForm.about.skillsInput,
+        favorites: req.body.currentUserForm.about.favoritesInput,
+      },
+      img: req.body.currentUserForm.imgInput,
+    },
+  );
+  res.sendStatus(200);
+});
+
 module.exports = router;

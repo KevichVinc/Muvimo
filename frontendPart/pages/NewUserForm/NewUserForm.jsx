@@ -5,7 +5,9 @@ import style from './NewUserForm.module.css';
 
 export default function NewUserForm() {
   const dispatch = useDispatch();
-  const currentUserForm = useSelector((state) => state.newUserForm);
+  const currentUserForm = useSelector(
+    (state) => state.app.newUserForm,
+  );
 
   const currentInput = (e) =>
     dispatch(appAC.currentFormFilter(e.target.value, e.target.id));

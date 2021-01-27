@@ -1,15 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as appAC from '../../redux/actionCreators';
+import * as appAC from '../../redux/editProfileCreator';
 import style from './EditUserForm.module.css';
 
 export default function EditUserForm() {
   const dispatch = useDispatch();
-  const currentUserForm = useSelector((state) => state.newUserForm);
-  const profileToFind = useSelector(
-    (state) => state.currentProfileToEditInput,
+  const currentUserForm = useSelector(
+    (state) => state.editProfile.userEdit,
   );
-  const profileToEdit = useSelector((state) => state.profileToEdit);
+  const profileToFind = useSelector(
+    (state) => state.editProfile.currentProfileToEditInput,
+  );
 
   const currentInput = (e) =>
     dispatch(appAC.currentFormFilter(e.target.value, e.target.id));
@@ -42,11 +43,7 @@ export default function EditUserForm() {
             id="firstName"
             type="text"
             placeholder="Enter your firstname"
-            value={
-              profileToEdit === undefined
-                ? currentUserForm.firstNameInput
-                : profileToEdit.firstNameInput
-            }
+            value={currentUserForm.firstNameInput}
             onChange={currentInput}
           />
         </div>

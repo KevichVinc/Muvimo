@@ -7,7 +7,7 @@ import * as appAC from '../../redux/actionCreators';
 
 export default function Profiles() {
   const dispatch = useDispatch();
-  const profiles = useSelector((state) => state.profiles);
+  const profiles = useSelector((state) => state.app.profiles);
   useEffect(() => dispatch(appAC.onLoading()), []);
 
   return (
