@@ -9,9 +9,7 @@ export const currentInputValue = (inputValue) => {
   };
 };
 export const currentFormFilter = (inputValue, id) => {
-  if (inputValue > 100) {
-    alert('Введите достоверную информацию');
-  } else if (id === 'age') {
+  if (id === 'age') {
     return {
       type: types.CURRENT_FORM_AGE,
       inputValue,
@@ -46,6 +44,11 @@ export const currentFormFilter = (inputValue, id) => {
       type: types.CURRENT_FORM_IMG,
       inputValue,
     };
+  } else if (id === 'find') {
+    return {
+      type: types.CURRENT_INPUT_FIND,
+      inputValue,
+    };
   }
 };
 export const onLoading = () => {
@@ -54,7 +57,18 @@ export const onLoading = () => {
     dispatch(loadProfilesFromDb(json.data.profiles));
   };
 };
-
+export const findProfileById = (profileId) => {
+  return async (dispatch) => {
+    const json = await axios.post('api/profiles/find', { profileId });
+    dispatch(profileToEdit(json.data.profileToEdit));
+  };
+};
+export const profileToEdit = (profileToEdit) => {
+  return {
+    type: types.PROFILE_TO_EDIT,
+    result: profileToEdit,
+  };
+};
 export const loadProfilesFromDb = (loadedProfiles) => {
   return {
     type: types.LOAD_PROFILES,
@@ -74,10 +88,9 @@ export const deleteThisProfile = (profileId) => {
 export const createNewProfile = (currentUserForm) => {
   (async () => {
     try {
-      const zapros = await axios.post('/api/profiles/new', {
+      await axios.post('/api/profiles/new', {
         currentUserForm,
       });
-      console.log(zapros);
       alert('Профайл создан');
     } catch {
       alert('not saved bro');

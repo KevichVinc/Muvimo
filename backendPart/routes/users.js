@@ -10,7 +10,13 @@ router.get('/', async (req, res) => {
 });
 router.post('/delete', async (req, res) => {
   await User.deleteOne({ _id: req.body.profileId });
-  res.send(200);
+  res.sendStatus(200);
+});
+router.post('/find', async (req, res) => {
+  const profileToEdit = await User.findOne({
+    _id: req.body.profileId,
+  });
+  res.json({ profileToEdit });
 });
 
 router.post('/new', async (req, res) => {
@@ -25,7 +31,7 @@ router.post('/new', async (req, res) => {
     },
     img: req.body.currentUserForm.imgInput,
   });
-  res.send(200);
+  res.sendStatus(200);
 });
 
 module.exports = router;

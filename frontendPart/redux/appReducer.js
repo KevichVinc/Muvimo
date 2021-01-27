@@ -13,6 +13,8 @@ const initialState = {
   addPost: {
     currentInput: '',
   },
+  currentProfileToEditInput: '',
+  profileToEdit: {},
   result: '',
 };
 
@@ -27,6 +29,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         profiles: action.result,
+      };
+    case types.PROFILE_TO_EDIT:
+      return {
+        ...state,
+        profileToEdit: action.result,
       };
     case types.CURRENT_FORM_AGE:
       return {
@@ -97,6 +104,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         result: action.result,
+      };
+    case types.CURRENT_INPUT_FIND:
+      return {
+        ...state,
+        currentProfileToEditInput: action.inputValue,
       };
     default:
       return state;
