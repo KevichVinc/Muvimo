@@ -3,22 +3,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import FriendRow from './FriendRow';
 import style from './Profiles.module.css';
 
-import * as appAC from '../../redux/actionCreators';
+import * as appAC from '../../redux/actionCreators/profiles';
 
 export default function Profiles() {
   const dispatch = useDispatch();
-  const profiles = useSelector((state) => state.app.profiles);
-  useEffect(() => dispatch(appAC.onLoading()), []);
+  const profiles = useSelector((state) => state.profiles);
+  useEffect(() => dispatch(appAC.loadProfiles()), []);
 
   return (
     <div className={style.main}>
-      {profiles.map((item) => (
+      {profiles.map((profile) => (
         <FriendRow
-          img={item.img}
-          firstName={item.firstName}
-          lastName={item.lastName}
-          profileId={item._id}
-          key={item._id}
+          avatar={profile.avatar}
+          firstName={profile.firstName}
+          lastName={profile.lastName}
+          id={profile.id}
+          key={profile.id}
         />
       ))}
     </div>

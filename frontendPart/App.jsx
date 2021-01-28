@@ -7,8 +7,8 @@ import Profiles from './pages/Profiles/Profiles';
 import Settings from './pages/Settings/Settings';
 import Portfolio from './components/Portfolio/Portfolio';
 import Feed from './components/Feed/Feed';
-import NewUserForm from './pages/NewUserForm/NewUserForm';
-import EditUserForm from './pages/EditUserForm/EditUserForm';
+import NewProfile from './pages/NewProfile/NewProfile';
+import EditProfile from './pages/EditProfile/EditProfile';
 import Profile from './pages/Profile/Profile';
 
 import style from './style.module.css';
@@ -23,9 +23,13 @@ export default function App() {
         <Route path="/settings" render={() => <Settings />} />
         <Route path="/portfolio" render={() => <Portfolio />} />
         <Route path="/feed" render={() => <Feed />} />
-        <Route path="/newprofile" render={() => <NewUserForm />} />
-        <Route path="/editprofile" render={() => <EditUserForm />} />
-        <Route path="/myprofile" render={() => <Profile />} />
+        <Route path="/newprofile" render={() => <NewProfile />} />
+        <Route path="/editprofile" render={() => <EditProfile />} />
+        <Route
+          exact
+          path="/profile/?id=:id"
+          render={() => <Profile />}
+        />
       </div>
     </div>
   );

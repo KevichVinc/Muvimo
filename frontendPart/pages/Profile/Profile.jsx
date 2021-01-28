@@ -9,6 +9,9 @@ import Addpost from './Addpost/Addpost';
 import Post from './Posts/Post';
 import Portfolio from './Portfolio/Portfolio';
 
+//получить из router id
+//load Profile data
+
 export default function Profile() {
   return (
     <div className={style.main}>
