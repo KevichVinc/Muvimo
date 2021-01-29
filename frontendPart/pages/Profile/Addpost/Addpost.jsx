@@ -2,12 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import style from './Addpost.module.css';
-import * as appAC from '../../../redux/actionCreators';
+import * as appAC from '../../../redux/actionCreators/profiles';
 
 export default function Addpost() {
   const dispatch = useDispatch();
   const inputValue = useSelector(
-    (state) => state.app.addPost.currentInput,
+    (state) => state.addPost.currentInput,
   );
   const sendInput = (e) =>
     dispatch(appAC.currentInputValue(e.target.value));

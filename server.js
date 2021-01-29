@@ -4,7 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const usersRouter = require('./backendPart/routes/users');
+const profiles = require('./backendPart/routes/profiles');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(
 app.use(morgan('dev'));
 app.use(bodyParser.json({ limit: '50mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-app.use('/api/profiles', usersRouter);
+app.use('/api/profiles', profiles);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -33,8 +33,5 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
 );
-
-// конструктор и точка доступа к методам find и пр. MongoDB
-// const Kat = mongoose.model('Kat', katsSchema);
 
 http.createServer(app).listen(5000);
