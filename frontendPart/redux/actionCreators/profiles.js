@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as types from '../actionTypes';
+
 import store from '../store';
 
 export const currentInputValue = (inputValue) => ({
@@ -62,7 +63,7 @@ export const loadProfiles = () => async (dispatch) => {
 
 export const findProfileById = (id) => async (dispatch) => {
   try {
-    const json = await axios.get(`/api/profiles/id/?id=${id}`);
+    const json = await axios.get(`/api/profiles/${id}`);
     dispatch(setProfile(json.data.profile));
   } catch {
     throw new Error('Ошибка при загрузке профиля');

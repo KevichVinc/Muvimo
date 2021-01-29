@@ -3,7 +3,6 @@ const http = require('http');
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
 const profiles = require('./backendPart/routes/profiles');
 
 const app = express();
@@ -15,9 +14,10 @@ app.use(
     optionsSuccessStatus: 200,
   }),
 );
+
 app.use(morgan('dev'));
-app.use(bodyParser.json({ limit: '50mb', extended: true }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json({ limit: '50mb', extended: true }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use('/api/profiles', profiles);
 
 const db = mongoose.connection;

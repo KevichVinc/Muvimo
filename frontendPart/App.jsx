@@ -19,15 +19,16 @@ export default function App() {
       <Header />
       <Navbar />
       <div className={style.appContentWrapper}>
-        <Route path="/profiles" render={() => <Profiles />} />
+        <Route exact path="/profiles" render={() => <Profiles />} />
         <Route path="/settings" render={() => <Settings />} />
         <Route path="/portfolio" render={() => <Portfolio />} />
         <Route path="/feed" render={() => <Feed />} />
         <Route path="/newprofile" render={() => <NewProfile />} />
         <Route path="/editprofile" render={() => <EditProfile />} />
+        <Route path="/myprofile" render={() => <Profile />} />
         <Route
           exact
-          path="/profile/?id=:id"
+          path="/profiles/:id"
           render={() => <Profile />}
         />
       </div>

@@ -11,11 +11,10 @@ export default function FriendRow(props) {
   const deleteProfileById = () => {
     dispatch(appAC.deleteProfileById(id));
   };
-  const handleProfileById = () => dispatch(appAC.findProfileById(id));
 
   return (
     <div className={style.main}>
-      <NavLink to={`/profile/?id=${id}`} onClick={handleProfileById}>
+      <NavLink to={`/profiles/${id}`}>
         <img
           className={style.profilePhoto}
           src={avatar}
@@ -41,5 +40,5 @@ FriendRow.propTypes = {
   avatar: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
