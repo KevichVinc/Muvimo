@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import style from './Profile.module.css';
+import * as appAC from '../../redux/actionCreators/profiles';
 
 import Avatar from './Avatarbox/Avatar';
 import Avataredit from './Avatarbox/Avataredit';
 import Infobox from './Infobox/Infobox';
 import Friendsbox from './Friendsbox/Friendsbox';
+
 import Addpost from './Addpost/Addpost';
 import Post from './Posts/Post';
 import Portfolio from './Portfolio/Portfolio';
 
-//получить из router id
-//load Profile data
-
 export default function Profile() {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  useEffect(() => dispatch(appAC.findProfileById(id)), []);
   return (
     <div className={style.main}>
       <div className={style.avatar}>

@@ -19,10 +19,11 @@ router.post('/delete', async (req, res) => {
     res.sendStatus(404);
   }
 });
-router.get('/id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
+    const { id } = req.params;
     const profile = await Profile.findOne({
-      id: req.query.id,
+      id,
     });
     res.json({ profile });
   } catch {
