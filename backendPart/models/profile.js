@@ -1,7 +1,7 @@
+const normalize = require('normalize-mongoose');
 const { Schema, model } = require('mongoose');
 
 const profileSchema = new Schema({
-  id: Number,
   firstName: String,
   lastName: String,
   friends: [String],
@@ -11,5 +11,7 @@ const profileSchema = new Schema({
   age: Number,
   avatar: String,
 });
+
+profileSchema.plugin(normalize);
 
 module.exports = model('Profile', profileSchema);

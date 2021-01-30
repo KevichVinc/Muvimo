@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// import { NavLink } from 'react-router-dom';
 
 import * as appAC from '../../redux/actionCreators/profiles';
 import Avatar from '../NewProfile/Inputs/Avatar';
@@ -16,23 +17,24 @@ export default function EditProfile() {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile);
 
-  const editProfile = (e) => {
-    e.preventDefault();
+  const editProfile = () => {
     dispatch(appAC.editProfile(profile));
   };
 
   return (
     <div className={style.main}>
-      <form type="submit" onSubmit={editProfile}>
-        <Avatar />
-        <Firstname />
-        <Lastname />
-        <Age />
-        <City />
-        <Skills />
-        <Favorites />
-        <button type="submit">Edit profile</button>
-      </form>
+      <Avatar />
+      <Firstname />
+      <Lastname />
+      <Age />
+      <City />
+      <Skills />
+      <Favorites />
+      {/* <NavLink to={`/profiles/${profile.id}`}> */}
+      <button type="button" onClick={editProfile}>
+        Edit profile
+      </button>
+      {/* </NavLink> */}
     </div>
   );
 }

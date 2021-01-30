@@ -94,9 +94,24 @@ export default function appReducer(state = initialState, action) {
     case types.PROFILE_CREATED:
       return {
         ...state,
+        profile: {
+          firstName: '',
+          lastName: '',
+          friends: [],
+          city: '',
+          skills: [],
+          favorites: [],
+          age: '',
+          avatar: '',
+        },
         result: action.result,
       };
     case types.PROFILE_DELETED:
+      return {
+        ...state,
+        result: action.result,
+      };
+    case types.PROFILE_EDITED:
       return {
         ...state,
         result: action.result,

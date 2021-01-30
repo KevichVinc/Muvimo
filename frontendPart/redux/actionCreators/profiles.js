@@ -1,6 +1,5 @@
 import axios from 'axios';
 import * as types from '../actionTypes';
-
 import store from '../store';
 
 export const currentInputValue = (inputValue) => ({
@@ -70,32 +69,52 @@ export const findProfileById = (id) => async (dispatch) => {
   }
 };
 
+export const profileDeleted = () => ({
+  type: types.PROFILE_DELETED,
+  result: 'profile deleted',
+});
+
 export const deleteProfileById = (id) => async (dispatch) => {
   try {
-    await axios.post('api/profiles/delete', { id });
+    await axios.delete('api/profiles/delete', { id });
     const profiles = store
       .getState()
       .profiles.filter((profile) => profile.id !== id);
     dispatch(setProfiles(profiles));
+    dispatch(profileDeleted());
   } catch {
     throw new Error('Ошибка при удалении профиля');
   }
-  return {
-    type: types.PROFILE_DELETED,
-    result: 'profile deleted',
-  };
 };
 
-export const createProfile = (profile) => async () => {
+export const profileCreated = () => ({
+  type: types.PROFILE_CREATED,
+  result: 'profile created',
+});
+
+export const createProfile = (profile) => async (dispatch) => {
   try {
     await axios.post('/api/profiles/new', {
       profile,
     });
+    dispatch(profileCreated());
   } catch {
     throw new Error('Профайл не был создан');
   }
-  return {
-    type: types.PROFILE_CREATED,
-    result: 'profile created',
-  };
+};
+
+export const profileEdited = () => ({
+  type: types.PROFILE_EDITED,
+  result: 'profile edited',
+});
+
+export const editProfile = (profile) => async (dispatch) => {
+  try {
+    await axios.post('api/profiles/edit', {
+      profile,
+    });
+    dispatch(profileEdited());
+  } catch {
+    throw new Error('Ошибка при редактировании профиля');
+  }
 };

@@ -16,23 +16,22 @@ export default function NewProfile() {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile);
 
-  const createProfile = (e) => {
-    e.preventDefault();
+  const createProfile = () => {
     dispatch(appAC.createProfile(profile));
   };
 
   return (
     <div className={style.main}>
-      <form type="submit" onSubmit={createProfile}>
-        <Avatar />
-        <Firstname />
-        <Lastname />
-        <Age />
-        <City />
-        <Skills />
-        <Favorites />
-        <button type="submit">Create profile</button>
-      </form>
+      <Avatar />
+      <Firstname />
+      <Lastname />
+      <Age />
+      <City />
+      <Skills />
+      <Favorites />
+      <button type="button" onClick={createProfile}>
+        Create profile
+      </button>
     </div>
   );
 }
