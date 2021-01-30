@@ -13,7 +13,6 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        exclude: /node_modules/,
         use: [
           'style-loader',
           {
@@ -25,7 +24,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff|woff2|jpg|png)$/,
+        test: /\.(woff|woff2|jpg|png|ttf)$/,
         use: {
           loader: 'url-loader',
         },

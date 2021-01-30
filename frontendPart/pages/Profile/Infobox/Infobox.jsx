@@ -10,7 +10,7 @@ export default function Infobox() {
   const skills = useSelector(profileSelectors.getProfileSkills);
   const city = useSelector(profileSelectors.getProfileCity);
   const favorites = useSelector(profileSelectors.getProfileFavorites);
-  console.log(skills);
+
   return (
     <div className={style.main}>
       <div className={style.fullname}>

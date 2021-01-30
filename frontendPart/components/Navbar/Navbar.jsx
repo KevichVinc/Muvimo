@@ -32,11 +32,6 @@ export default function Navbar() {
         </NavLink>
       </div>
       <div className={style.item}>
-        <NavLink to="/editprofile" activeClassName={style.active}>
-          Edit profile
-        </NavLink>
-      </div>
-      <div className={style.item}>
         <NavLink to="/myprofile" activeClassName={style.active}>
           My profile
         </NavLink>

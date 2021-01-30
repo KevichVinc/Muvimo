@@ -11,9 +11,9 @@ router.get('/', async (req, res) => {
     res.sendStatus(404);
   }
 });
-router.post('/delete', async (req, res) => {
+router.delete('/delete', async (req, res) => {
   try {
-    await Profile.deleteOne({ id: req.body.id });
+    await Profile.deleteOne({ _id: req.body.id });
     res.sendStatus(200);
   } catch {
     res.sendStatus(404);
@@ -22,9 +22,7 @@ router.post('/delete', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const profile = await Profile.findOne({
-      id,
-    });
+    const profile = await Profile.findById(id);
     res.json({ profile });
   } catch {
     res.sendStatus(404);
@@ -35,7 +33,6 @@ router.post('/new', async (req, res) => {
   try {
     const { profile } = req.body;
     await Profile.create({
-      id: Math.random(),
       firstName: profile.firstName,
       lastName: profile.lastName,
       age: profile.age,
@@ -54,7 +51,7 @@ router.post('/edit', async (req, res) => {
   try {
     const { profile } = req.body;
     await Profile.updateOne(
-      { id: profile.id },
+      { _id: profile.id },
       {
         firstName: profile.firstName,
         lastName: profile.lastName,
@@ -62,7 +59,7 @@ router.post('/edit', async (req, res) => {
         city: profile.city,
         skills: profile.skills,
         favorites: profile.favorites,
-        avatar: profile.img,
+        avatar: profile.avatar,
       },
     );
     res.sendStatus(200);
