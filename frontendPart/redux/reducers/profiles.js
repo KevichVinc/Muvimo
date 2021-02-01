@@ -16,6 +16,7 @@ const initialState = {
     currentInput: '',
   },
   result: '',
+  search: '',
 };
 
 export default function appReducer(state = initialState, action) {
@@ -80,6 +81,11 @@ export default function appReducer(state = initialState, action) {
           ...state.profile,
           favorites: action.favorites,
         },
+      };
+    case types.UPDATE_SEARCH:
+      return {
+        ...state,
+        search: action.search,
       };
     case types.SET_PROFILES:
       return {
