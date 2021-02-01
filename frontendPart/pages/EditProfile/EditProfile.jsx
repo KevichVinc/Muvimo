@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
 
 import * as appAC from '../../redux/actionCreators/profiles';
 import Avatar from '../NewProfile/Inputs/Avatar';
@@ -30,11 +29,9 @@ export default function EditProfile() {
       <City />
       <Skills />
       <Favorites />
-      {/* <NavLink to={`/profiles/${profile.id}`}> */}
       <button type="button" onClick={editProfile}>
         Edit profile
       </button>
-      {/* </NavLink> */}
     </div>
   );
 }

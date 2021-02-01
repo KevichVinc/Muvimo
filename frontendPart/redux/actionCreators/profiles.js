@@ -51,6 +51,17 @@ export const setProfile = (profile) => ({
   profile,
 });
 
+export const updateSearch = (search) => ({
+  type: types.UPDATE_SEARCH,
+  search,
+});
+export const filterProfiles = (search) => (dispatch) => {
+  const profiles = store
+    .getState()
+    .profiles.filter((profile) => profile.firstName === search);
+  dispatch(setProfiles(profiles));
+};
+
 export const loadProfiles = () => async (dispatch) => {
   try {
     const json = await axios.get('/api/profiles');

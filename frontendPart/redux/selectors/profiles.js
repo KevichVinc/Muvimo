@@ -7,3 +7,5 @@ export const getProfileAge = (state) => state.profile.age;
 export const getProfileSkills = (state) => state.profile.skills;
 export const getProfileCity = (state) => state.profile.city;
 export const getProfileFavorites = (state) => state.profile.favorites;
+
+export const getSearch = (state) => state.search;
