@@ -11,8 +11,8 @@ export default function Age() {
     <div>
       Age:
       <input
-        type="text"
-        placeholder="Enter your firstname"
+        type="number"
+        placeholder="How old are you?"
         value={age}
         onChange={updateAge}
       />

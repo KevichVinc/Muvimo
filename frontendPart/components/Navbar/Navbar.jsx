@@ -32,8 +32,8 @@ export default function Navbar() {
         </NavLink>
       </div>
       <div className={style.item}>
-        <NavLink to="/myprofile" activeClassName={style.active}>
-          My profile
+        <NavLink to="/find" activeClassName={style.active}>
+          Global search
         </NavLink>
       </div>
     </nav>

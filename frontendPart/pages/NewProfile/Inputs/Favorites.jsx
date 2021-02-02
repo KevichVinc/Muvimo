@@ -14,7 +14,7 @@ export default function Favorites() {
       Favorites:
       <input
         type="text"
-        placeholder="Enter your firstname"
+        placeholder="What you like?"
         value={favorites}
         onChange={updateFavorites}
       />

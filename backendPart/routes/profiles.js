@@ -28,6 +28,15 @@ router.get('/:id', async (req, res) => {
     res.sendStatus(404);
   }
 });
+router.get('/find/:firstName', async (req, res) => {
+  try {
+    const { firstName } = req.params;
+    const profiles = await Profile.find({ firstName });
+    res.json({ profiles });
+  } catch {
+    res.sendStatus(404);
+  }
+});
 
 router.post('/new', async (req, res) => {
   try {
