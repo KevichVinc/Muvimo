@@ -14,7 +14,7 @@ export default function Avatar() {
       Avatar:
       <input
         type="text"
-        placeholder="Enter your firstname"
+        placeholder="Add URL link"
         value={avatar}
         onChange={updateAvatar}
       />

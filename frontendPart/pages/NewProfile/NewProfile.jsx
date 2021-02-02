@@ -22,13 +22,13 @@ export default function NewProfile() {
 
   return (
     <div className={style.main}>
-      <Avatar />
-      <Firstname />
-      <Lastname />
-      <Age />
-      <City />
-      <Skills />
-      <Favorites />
+      <Avatar className={style.inputs} />
+      <Firstname className={style.inputs} />
+      <Lastname className={style.inputs} />
+      <Age className={style.inputs} />
+      <City className={style.inputs} />
+      <Skills className={style.inputs} />
+      <Favorites className={style.inputs} />
       <button type="button" onClick={createProfile}>
         Create profile
       </button>

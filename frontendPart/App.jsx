@@ -11,6 +11,7 @@ import Feed from './components/Feed/Feed';
 import NewProfile from './pages/NewProfile/NewProfile';
 import EditProfile from './pages/EditProfile/EditProfile';
 import Profile from './pages/Profile/Profile';
+import GlobalSearch from './pages/GlobalSearch/GlobalSearch';
 
 import style from './style.module.css';
 
@@ -26,7 +27,12 @@ export default function App() {
         <Route path="/feed" render={() => <Feed />} />
         <Route path="/newprofile" render={() => <NewProfile />} />
         <Route path="/editprofile" render={() => <EditProfile />} />
-        <Route path="/myprofile" render={() => <Profile />} />
+        <Route exact path="/find" render={() => <GlobalSearch />} />
+        <Route
+          exact
+          path="/find/:firstName"
+          render={() => <GlobalSearch />}
+        />
         <Route
           exact
           path="/profiles/:id"

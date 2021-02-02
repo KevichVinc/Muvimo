@@ -14,7 +14,7 @@ export default function Skills() {
       Skills:
       <input
         type="text"
-        placeholder="Enter your firstname"
+        placeholder="What are your creative skills?"
         value={skills}
         onChange={updateSkills}
       />

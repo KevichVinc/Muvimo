@@ -13,7 +13,7 @@ export default function City() {
       City:
       <input
         type="text"
-        placeholder="Enter your firstname"
+        placeholder="Enter your city"
         value={city}
         onChange={updateCity}
       />

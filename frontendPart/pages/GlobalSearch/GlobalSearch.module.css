@@ -1,0 +1,35 @@
+.main {
+  display: grid;
+  width: 800px;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr 2fr 5fr;
+  grid-template-areas: 'searchHeader searchField findButton';
+}
+
+.searchHeader {
+  display: grid;
+  grid-area: searchHeader;
+  align-self: center;
+  justify-self: center;
+}
+
+.searchField {
+  display: grid;
+  grid-area: searchField;
+  align-self: center;
+  width: 200px;
+  height: 25px;
+}
+
+.findButton {
+  display: grid;
+  grid-area: findButton;
+  align-self: center;
+  margin-left: 10px;
+  width: 50px;
+  height: 25px;
+}

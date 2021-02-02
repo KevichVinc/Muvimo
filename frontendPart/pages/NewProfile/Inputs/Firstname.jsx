@@ -13,7 +13,7 @@ export default function Firstname() {
       First name:
       <input
         type="text"
-        placeholder="Enter your firstname"
+        placeholder="Enter your Firstname"
         value={firstName}
         onChange={updateFirstName}
       />
