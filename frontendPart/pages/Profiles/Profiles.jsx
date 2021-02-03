@@ -8,15 +8,12 @@ import * as appAC from '../../redux/actionCreators/profiles';
 
 export default function Profiles() {
   const dispatch = useDispatch();
-  const firstName = useSelector(getSearch);
+  const search = useSelector(getSearch);
   const profiles = useSelector((state) => state.profiles);
   useEffect(() => dispatch(appAC.loadProfiles()), []);
 
   const updateSearch = (e) =>
     dispatch(appAC.updateSearch(e.target.value));
-
-  const handleFilter = () =>
-    dispatch(appAC.filterProfiles(firstName));
 
   return (
     <div className={style.main}>
@@ -26,26 +23,33 @@ export default function Profiles() {
           className={style.searchField}
           type="text"
           placeholder="Who do you want to find?"
-          value={firstName}
+          value={search}
           onChange={updateSearch}
         />
-        <button
-          className={style.findButton}
-          type="button"
-          onClick={handleFilter}
-        >
-          FIND
-        </button>
       </div>
-      {profiles.map((profile) => (
-        <FriendRow
-          avatar={profile.avatar}
-          firstName={profile.firstName}
-          lastName={profile.lastName}
-          id={profile.id}
-          key={profile.id}
-        />
-      ))}
+      {search === ''
+        ? profiles.map((profile) => (
+            <FriendRow
+              avatar={profile.avatar}
+              firstName={profile.firstName}
+              lastName={profile.lastName}
+              id={profile.id}
+              key={profile.id}
+            />
+          ))
+        : profiles.map((profile) =>
+            profile.firstName === search ? (
+              <FriendRow
+                avatar={profile.avatar}
+                firstName={profile.firstName}
+                lastName={profile.lastName}
+                id={profile.id}
+                key={profile.id}
+              />
+            ) : (
+              <div />
+            ),
+          )}
     </div>
   );
 }

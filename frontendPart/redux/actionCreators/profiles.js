@@ -78,12 +78,6 @@ export const updateSearch = (search) => ({
   type: types.UPDATE_SEARCH,
   search,
 });
-export const filterProfiles = (firstName) => (dispatch) => {
-  const profiles = store
-    .getState()
-    .profiles.filter((profile) => profile.firstName === firstName);
-  dispatch(setProfiles(profiles));
-};
 
 export const loadProfiles = () => async (dispatch) => {
   try {
