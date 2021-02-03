@@ -12,19 +12,17 @@ const initialState = {
     age: '',
     avatar: '',
   },
-  addPost: {
-    currentInput: '',
-  },
-  result: '',
+  post: '',
+  status: '',
   search: '',
 };
 
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
-    case types.CURRENT_INPUT_VALUE:
+    case types.UPDATE_POST:
       return {
         ...state,
-        addPost: { currentInput: action.text },
+        post: action.post,
       };
     case types.UPDATE_AVATAR:
       return {
@@ -97,7 +95,12 @@ export default function appReducer(state = initialState, action) {
         ...state,
         profile: action.profile,
       };
-    case types.PROFILE_CREATED:
+    case types.PROFILE_STATUS:
+      return {
+        ...state,
+        status: action.status,
+      };
+    case types.PROFILE_CLEARED:
       return {
         ...state,
         profile: {
@@ -110,17 +113,17 @@ export default function appReducer(state = initialState, action) {
           age: '',
           avatar: '',
         },
-        result: action.result,
+        status: action.status,
       };
     case types.PROFILE_DELETED:
       return {
         ...state,
-        result: action.result,
+        status: action.status,
       };
     case types.PROFILE_EDITED:
       return {
         ...state,
-        result: action.result,
+        status: action.status,
       };
     default:
       return state;

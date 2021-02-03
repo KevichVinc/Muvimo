@@ -1,7 +1,9 @@
 .main {
   display: grid;
   width: 800px;
-  grid-template-rows: repeat(6, 1fr);
+}
+.none {
+  display: none;
 }
 
 .search {

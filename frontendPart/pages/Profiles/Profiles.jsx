@@ -47,7 +47,7 @@ export default function Profiles() {
                 key={profile.id}
               />
             ) : (
-              <div />
+              <div className={style.none} />
             ),
           )}
     </div>

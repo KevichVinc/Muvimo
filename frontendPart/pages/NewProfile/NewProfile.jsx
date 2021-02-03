@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import * as appAC from '../../redux/actionCreators/profiles';
@@ -15,7 +15,7 @@ import style from './NewProfile.module.css';
 export default function NewProfile() {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile);
-
+  useEffect(() => dispatch(appAC.clearProfileState()), []);
   const createProfile = () => {
     dispatch(appAC.createProfile(profile));
   };
