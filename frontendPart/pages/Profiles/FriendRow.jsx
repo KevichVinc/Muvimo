@@ -6,14 +6,14 @@ import style from './FriendRow.module.css';
 import * as appAC from '../../redux/actionCreators/profiles';
 
 export default function FriendRow(props) {
-  const { avatar, firstName, lastName, id } = props;
+  const { avatar, firstName, lastName, id, display } = props;
   const dispatch = useDispatch();
   const deleteProfileById = () => {
     dispatch(appAC.deleteProfileById(id));
   };
 
   return (
-    <div className={style.main}>
+    <div className={display === 'none' ? style.none : style.main}>
       <NavLink to={`/profiles/${id}`}>
         <img
           className={style.profilePhoto}
@@ -41,4 +41,5 @@ FriendRow.propTypes = {
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  display: PropTypes.string.isRequired,
 };
