@@ -1,5 +1,6 @@
 const express = require('express');
 const Profile = require('../models/profile');
+const validation = require('../validate/name');
 
 const router = express.Router();
 
@@ -40,24 +41,29 @@ router.get('/find/:firstName', async (req, res) => {
 });
 
 router.post('/new', async (req, res) => {
-  try {
-    const { profile } = req.body;
-    await Profile.create({
-      firstName: profile.firstName,
-      lastName: profile.lastName,
-      age: profile.age,
-      city: profile.city,
-      skills: profile.skills,
-      favorites: profile.favorites,
-      avatar: profile.avatar,
-    });
-    res.sendStatus(200);
-  } catch {
-    res.sendStatus(404);
+  const { profile } = req.body;
+  const isValid = await validation(profile);
+  if (isValid === 'ok') {
+    try {
+      await Profile.create({
+        firstName: profile.firstName,
+        lastName: profile.lastName,
+        age: profile.age,
+        city: profile.city,
+        skills: profile.skills,
+        favorites: profile.favorites,
+        avatar: profile.avatar,
+      });
+      res.sendStatus(200);
+    } catch {
+      res.sendStatus(404);
+    }
+  } else {
+    res.sendStatus(403);
   }
 });
 
-router.post('/edit', async (req, res) => {
+router.put('/edit', async (req, res) => {
   try {
     const { profile } = req.body;
     await Profile.updateOne(
