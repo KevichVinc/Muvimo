@@ -194,7 +194,7 @@ export const editProfile = (profile) => async (dispatch) => {
   const validation = validateProfile(profile);
   if (validation === 'ok') {
     try {
-      await axios.post('api/profiles/edit', {
+      await axios.put('api/profiles/edit', {
         profile,
       });
       dispatch(profileEdited());
