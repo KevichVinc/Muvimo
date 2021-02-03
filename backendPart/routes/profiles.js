@@ -11,9 +11,10 @@ router.get('/', async (req, res) => {
     res.sendStatus(404);
   }
 });
-router.delete('/delete', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   try {
-    await Profile.deleteOne({ _id: req.body.id });
+    const { id } = req.params;
+    await Profile.findByIdAndDelete(id);
     res.sendStatus(200);
   } catch {
     res.sendStatus(404);

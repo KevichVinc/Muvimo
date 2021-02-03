@@ -16,6 +16,10 @@ export default function EditProfile() {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile);
 
+  const deleteProfileById = () => {
+    dispatch(appAC.deleteProfileById(profile.id));
+  };
+
   const editProfile = () => {
     dispatch(appAC.editProfile(profile));
   };
@@ -31,6 +35,9 @@ export default function EditProfile() {
       <Favorites />
       <button type="button" onClick={editProfile}>
         Edit profile
+      </button>
+      <button type="button" onClick={deleteProfileById}>
+        Delete profile
       </button>
     </div>
   );

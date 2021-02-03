@@ -6,11 +6,9 @@ import * as appAC from '../../../redux/actionCreators/profiles';
 
 export default function Addpost() {
   const dispatch = useDispatch();
-  const inputValue = useSelector(
-    (state) => state.addPost.currentInput,
-  );
-  const sendInput = (e) =>
-    dispatch(appAC.currentInputValue(e.target.value));
+  const post = useSelector((state) => state.post);
+  const handlePost = (e) =>
+    dispatch(appAC.updatePost(e.target.value));
 
   return (
     <div className={style.main}>
@@ -19,8 +17,8 @@ export default function Addpost() {
           type="text"
           placeholder="Type here"
           id={style.fname}
-          value={inputValue}
-          onChange={sendInput}
+          value={post}
+          onChange={handlePost}
         />
       </div>
       <div className={style.addImg}>
