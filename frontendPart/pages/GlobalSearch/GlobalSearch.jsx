@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSearch } from '../../redux/selectors/profiles';
+import debounce from '../../utilites/debounce/debounce';
 import FriendRow from '../Profiles/FriendRow';
 import style from './GlobalSearch.module.css';
 
@@ -9,19 +10,19 @@ import * as appAC from '../../redux/actionCreators/profiles';
 
 export default function GlobalSearch() {
   const dispatch = useDispatch();
-  const params = useParams();
+  // const params = useParams();
   const firstName = useSelector(getSearch);
   const profiles = useSelector((state) => state.profiles);
-  useEffect(
-    () =>
-      params.firstName === undefined
-        ? dispatch(appAC.setProfiles([]))
-        : dispatch(appAC.findByFirstName(params.firstName)),
-    [params],
-  );
 
-  const updateSearch = (e) =>
+  useEffect(() => {
+    dispatch(appAC.findByFirstName(firstName));
+  }, [firstName]);
+
+  const updateFirstName = (e) => {
     dispatch(appAC.updateSearch(e.target.value));
+  };
+
+  const debounced = debounce((e) => updateFirstName(e), 300);
 
   return (
     <div className={style.main}>
@@ -31,15 +32,8 @@ export default function GlobalSearch() {
           className={style.searchField}
           type="text"
           placeholder="Find By First Name"
-          value={firstName}
-          onChange={updateSearch}
+          onChange={debounced}
         />
-        <NavLink
-          className={style.findButton}
-          to={`/find/${firstName}`}
-        >
-          <button type="button">GLOBAL FIND</button>
-        </NavLink>
       </div>
       {profiles.map((profile) => (
         <FriendRow

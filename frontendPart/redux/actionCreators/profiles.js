@@ -130,16 +130,17 @@ export const loadProfiles = () => async (dispatch) => {
 
 export const findProfileById = (id) => async (dispatch) => {
   try {
-    const json = await axios.get(`/api/profiles/${id}`);
+    const json = await axios.get(`/api/profiles/profile/${id}`);
     dispatch(setProfile(json.data.profile));
   } catch {
     throw new Error('Ошибка при загрузке профиля');
   }
 };
+
 export const findByFirstName = (firstName) => async (dispatch) => {
   try {
     const json = await axios.get(`/api/profiles/find/${firstName}`);
-    dispatch(setProfiles(json.data.profiles));
+    dispatch(setProfiles(json.data.filteredProfiles));
   } catch {
     throw new Error('Ошибка при глобальном поиске');
   }

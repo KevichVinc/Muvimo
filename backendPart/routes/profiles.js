@@ -21,7 +21,8 @@ router.delete('/delete/:id', async (req, res) => {
     res.sendStatus(404);
   }
 });
-router.get('/:id', async (req, res) => {
+router.get('/profile/:id', async (req, res) => {
+  // тут изменил для теста путь
   try {
     const { id } = req.params;
     const profile = await Profile.findById(id);
@@ -33,8 +34,16 @@ router.get('/:id', async (req, res) => {
 router.get('/find/:firstName', async (req, res) => {
   try {
     const { firstName } = req.params;
-    const profiles = await Profile.find({ firstName });
-    res.json({ profiles });
+    const loweredFirstName = firstName.toLowerCase();
+    const profiles = await Profile.find();
+    const filteredProfiles = profiles.filter(
+      (profile) =>
+        profile.firstName.toLowerCase().indexOf(loweredFirstName) !==
+          -1 ||
+        profile.lastName.toLowerCase().indexOf(loweredFirstName) !==
+          -1,
+    );
+    res.json({ filteredProfiles });
   } catch {
     res.sendStatus(404);
   }

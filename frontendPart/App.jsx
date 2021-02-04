@@ -33,11 +33,7 @@ export default function App() {
           path="/find/:firstName"
           render={() => <GlobalSearch />}
         />
-        <Route
-          exact
-          path="/profiles/:id"
-          render={() => <Profile />}
-        />
+        <Route exact path="/profile/:id" render={() => <Profile />} />
       </div>
     </div>
   );

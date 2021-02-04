@@ -15,6 +15,14 @@ export default function Profiles() {
   const updateSearch = (e) =>
     dispatch(appAC.updateSearch(e.target.value));
 
+  const preparedSearch = search.toLowerCase();
+  const filteredProfiles = profiles.filter(
+    (profile) =>
+      profile.firstName.toLowerCase().indexOf(preparedSearch) !==
+        -1 ||
+      profile.lastName.toLowerCase().indexOf(preparedSearch) !== -1,
+  );
+
   return (
     <div className={style.main}>
       <div className={style.search}>
@@ -27,29 +35,15 @@ export default function Profiles() {
           onChange={updateSearch}
         />
       </div>
-      {search === ''
-        ? profiles.map((profile) => (
-            <FriendRow
-              avatar={profile.avatar}
-              firstName={profile.firstName}
-              lastName={profile.lastName}
-              id={profile.id}
-              key={profile.id}
-            />
-          ))
-        : profiles.map((profile) =>
-            profile.firstName === search ? (
-              <FriendRow
-                avatar={profile.avatar}
-                firstName={profile.firstName}
-                lastName={profile.lastName}
-                id={profile.id}
-                key={profile.id}
-              />
-            ) : (
-              <div className={style.none} />
-            ),
-          )}
+      {filteredProfiles.map((profile) => (
+        <FriendRow
+          avatar={profile.avatar}
+          firstName={profile.firstName}
+          lastName={profile.lastName}
+          id={profile.id}
+          key={profile.id}
+        />
+      ))}
     </div>
   );
 }
