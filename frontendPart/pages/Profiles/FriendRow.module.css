@@ -1,33 +1,42 @@
 .main {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 2fr 2fr;
-  grid-template-areas: 'profilePhoto nameAndMessage quickMenu';
-  background-color: brown;
-  grid-gap: 10px;
-  border-bottom: 2px solid #708090;
+  grid-template-areas: 'profilePhoto nameAndMessage quickMenu'; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  height: 100px;
+  display: flex;
+  background-color: #ffffff;
   margin: 5px;
-  border-width: 3px;
-  border-radius: 25px;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .profilePhoto {
-  display: grid;
-  justify-self: center;
-  grid-area: profilePhoto;
   width: 100px;
-  margin: 3px;
+  height: 100%;
+  object-fit: scale-down;
 }
+
+.nameAndMessage button {
+  border-radius: 12px;
+  background-color: rgb(97, 93, 250);
+  box-shadow: 0px 6px 10px 0px rgba(97, 93, 250, 0.2);
+  /* position: absolute; */
+  left: 1129px;
+  top: 444px;
+  width: 58px;
+  height: 48px;
+  z-index: 276;
+}
+
 .nameAndMessage {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-area: nameAndMessage;
-  color: white;
+  color: #3e3f5e;
 }
-.nameAndMessage button {
-  width: 80px;
-  border-radius: 20px;
-  margin-bottom: 3px;
-}
+
 .quickMenu {
   justify-self: end;
   width: 80px;
@@ -44,5 +53,5 @@
 .quickMenu button {
   background: none;
   border: none;
-  color: white;
+  color: #3e3f5e;
 }

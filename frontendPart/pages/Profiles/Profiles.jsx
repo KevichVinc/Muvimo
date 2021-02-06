@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSearch } from '../../redux/selectors/profiles';
+import { getLocalSearch } from '../../redux/selectors/profiles';
 import FriendRow from './FriendRow';
 import style from './Profiles.module.css';
 
@@ -8,12 +8,12 @@ import * as appAC from '../../redux/actionCreators/profiles';
 
 export default function Profiles() {
   const dispatch = useDispatch();
-  const search = useSelector(getSearch);
+  const search = useSelector(getLocalSearch);
   const profiles = useSelector((state) => state.profiles);
   useEffect(() => dispatch(appAC.loadProfiles()), []);
 
-  const updateSearch = (e) =>
-    dispatch(appAC.updateSearch(e.target.value));
+  const updateLocalSearch = (e) =>
+    dispatch(appAC.updateLocalSearch(e.target.value));
 
   const preparedSearch = search.toLowerCase();
   const filteredProfiles = profiles.filter(
@@ -32,7 +32,7 @@ export default function Profiles() {
           type="text"
           placeholder="Who do you want to find?"
           value={search}
-          onChange={updateSearch}
+          onChange={updateLocalSearch}
         />
       </div>
       {filteredProfiles.map((profile) => (

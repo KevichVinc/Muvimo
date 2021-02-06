@@ -9,3 +9,4 @@ export const getProfileCity = (state) => state.profile.city;
 export const getProfileFavorites = (state) => state.profile.favorites;
 
 export const getSearch = (state) => state.search;
+export const getLocalSearch = (state) => state.localSearch;

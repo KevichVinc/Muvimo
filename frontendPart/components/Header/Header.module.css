@@ -1,12 +1,16 @@
 .header {
+  display: flex;
+  padding: 0px 0px 0px 8px;
+  width: 100%;
+  height: 60px;
   grid-area: h;
-  background-color: #708090;
+  background-color: #615dfa;
 }
 
 .header img {
   padding: 0px 0px 0px 8px;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 a {

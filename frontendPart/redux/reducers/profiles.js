@@ -15,6 +15,7 @@ const initialState = {
   post: '',
   status: '',
   search: '',
+  localSearch: '',
 };
 
 export default function appReducer(state = initialState, action) {
@@ -84,6 +85,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         search: action.search,
+      };
+    case types.UPDATE_LOCAL_SEARCH:
+      return {
+        ...state,
+        localSearch: action.search,
       };
     case types.SET_PROFILES:
       return {

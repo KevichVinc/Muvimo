@@ -21,6 +21,8 @@
 
 .searchField {
   display: grid;
+  border-radius: 10px;
+  background-color: #4e4bc8;
   grid-area: searchField;
   align-self: center;
   width: 200px;
