@@ -118,6 +118,10 @@ export const updateSearch = (search) => ({
   type: types.UPDATE_SEARCH,
   search,
 });
+export const updateLocalSearch = (search) => ({
+  type: types.UPDATE_LOCAL_SEARCH,
+  search,
+});
 
 export const loadProfiles = () => async (dispatch) => {
   try {

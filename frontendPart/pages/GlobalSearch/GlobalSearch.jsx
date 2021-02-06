@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import queryString from 'query-string';
 import { getSearch } from '../../redux/selectors/profiles';
 import debounce from '../../utilites/debounce/debounce';
 import FriendRow from '../Profiles/FriendRow';
@@ -10,19 +11,29 @@ import * as appAC from '../../redux/actionCreators/profiles';
 
 export default function GlobalSearch() {
   const dispatch = useDispatch();
-  // const params = useParams();
-  const firstName = useSelector(getSearch);
+  const search = useSelector(getSearch);
   const profiles = useSelector((state) => state.profiles);
+  const history = useHistory();
 
   useEffect(() => {
-    dispatch(appAC.findByFirstName(firstName));
-  }, [firstName]);
+    const parsed = queryString.parse(history.location.search);
+    dispatch(appAC.updateSearch(parsed.firstName));
+    dispatch(appAC.findByFirstName(parsed));
+  }, []);
+
+  useEffect(() => {
+    history.push({
+      pathname: '/find',
+      search: `?firstName=${search}`,
+    });
+    dispatch(appAC.findByFirstName(history.location.search));
+  }, [search]);
 
   const updateFirstName = (e) => {
     dispatch(appAC.updateSearch(e.target.value));
   };
 
-  const debounced = debounce((e) => updateFirstName(e), 300);
+  const debounced = debounce((e) => updateFirstName(e), 600);
 
   return (
     <div className={style.main}>

@@ -17,23 +17,29 @@ import style from './style.module.css';
 
 export default function App() {
   return (
-    <div className={style.appWrapper}>
-      <Header />
-      <Navbar />
-      <div className={style.appContentWrapper}>
-        <Route exact path="/profiles" render={() => <Profiles />} />
-        <Route path="/settings" render={() => <Settings />} />
-        <Route path="/portfolio" render={() => <Portfolio />} />
-        <Route path="/feed" render={() => <Feed />} />
-        <Route path="/newprofile" render={() => <NewProfile />} />
-        <Route path="/editprofile" render={() => <EditProfile />} />
-        <Route exact path="/find" render={() => <GlobalSearch />} />
-        <Route
-          exact
-          path="/find/:firstName"
-          render={() => <GlobalSearch />}
-        />
-        <Route exact path="/profile/:id" render={() => <Profile />} />
+    <div className={style.background}>
+      <Header className={style.header} />
+      <div className={style.appWrapper}>
+        <Navbar />
+        <div className={style.appContentWrapper}>
+          <Route exact path="/profiles" render={() => <Profiles />} />
+          <Route path="/settings" render={() => <Settings />} />
+          <Route path="/portfolio" render={() => <Portfolio />} />
+          <Route path="/feed" render={() => <Feed />} />
+          <Route path="/newprofile" render={() => <NewProfile />} />
+          <Route path="/editprofile" render={() => <EditProfile />} />
+          <Route
+            exact
+            path="/find/:firstName?"
+            render={() => <GlobalSearch />}
+          />
+          {/* <Route exact path="/find" render={() => <GlobalSearch />} /> */}
+          <Route
+            exact
+            path="/profile/:id"
+            render={() => <Profile />}
+          />
+        </div>
       </div>
     </div>
   );

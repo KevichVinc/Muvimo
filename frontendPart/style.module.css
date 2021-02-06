@@ -11,22 +11,28 @@
 html,
 body {
   font-family: 'Open Sans', sans-serif;
+  margin-top: 0;
+  margin-left: 0;
+}
+.background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f8f8fb;
 }
 
 .appWrapper {
-  display: grid;
-  margin: 0 auto;
-  width: 1200px;
-  grid-template-areas:
-    'h h h'
-    'n c c';
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.appContentWrapper {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-.appContentWrapper {
-  padding: 20px;
-  grid-area: c;
-  background-color: #f0e4c6;
+.header {
+  display: flex;
 }

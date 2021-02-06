@@ -31,9 +31,12 @@ router.get('/profile/:id', async (req, res) => {
     res.sendStatus(404);
   }
 });
-router.get('/find/:firstName', async (req, res) => {
+router.get('/find', async (req, res) => {
+  if (req.query.firstName === '') {
+    res.json(null);
+  }
   try {
-    const { firstName } = req.params;
+    const { firstName } = req.query;
     const loweredFirstName = firstName.toLowerCase();
     const profiles = await Profile.find();
     const filteredProfiles = profiles.filter(
