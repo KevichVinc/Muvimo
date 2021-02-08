@@ -1,38 +1,29 @@
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: normal;
-  src: url('./assets/fonts/open-sans-v18-latin-regular.woff2')
-      format('woff2'),
-    url('./assets/fonts/open-sans-v18-latin-regular.woff')
-      format('woff');
-}
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
 
 html,
 body {
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 0;
-  margin-left: 0;
+  font-family: 'Titillium Web', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
 }
-.background {
+.main {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #f8f8fb;
+  min-height: calc(100vh - 40vh);
 }
-
-.appWrapper {
-  margin-top: 10px;
+.content {
   display: flex;
   justify-content: center;
+  flex-grow: 1;
 }
-.appContentWrapper {
-  margin-top: 10px;
-  margin-left: 10px;
-  display: flex;
-  justify-content: center;
+.main nav {
+  order: -1;
+  flex: 0 0 10vw;
 }
-
-.header {
-  display: flex;
+header,
+content,
+nav {
+  padding: 1em;
+}
+header {
+  height: 20vh;
 }

@@ -1,9 +1,9 @@
 .nav {
-  grid-area: n;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
-  padding: 20px;
+  font-weight: 700;
+  width: 200px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.5);
 }
 
 .item a {
@@ -12,5 +12,8 @@
 }
 
 .item a.active {
-  color: #22d2e2;
+  background-color: #22d2e2;
+  width: min-content;
+  border-radius: 5px;
+  color: #ffffff;
 }

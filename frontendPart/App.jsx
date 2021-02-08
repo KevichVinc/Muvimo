@@ -17,11 +17,10 @@ import style from './style.module.css';
 
 export default function App() {
   return (
-    <div className={style.background}>
-      <Header className={style.header} />
-      <div className={style.appWrapper}>
-        <Navbar />
-        <div className={style.appContentWrapper}>
+    <div className={style.body}>
+      <Header />
+      <div className={style.main}>
+        <div className={style.content}>
           <Route exact path="/profiles" render={() => <Profiles />} />
           <Route path="/settings" render={() => <Settings />} />
           <Route path="/portfolio" render={() => <Portfolio />} />
@@ -33,13 +32,13 @@ export default function App() {
             path="/find/:firstName?"
             render={() => <GlobalSearch />}
           />
-          {/* <Route exact path="/find" render={() => <GlobalSearch />} /> */}
           <Route
             exact
             path="/profile/:id"
             render={() => <Profile />}
           />
         </div>
+        <Navbar className={style.nav} />
       </div>
     </div>
   );
