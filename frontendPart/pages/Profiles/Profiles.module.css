@@ -1,6 +1,13 @@
 .main {
   display: grid;
-  width: 800px;
+  grid-template-columns: 100%;
+  grid-gap: 16px;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
 }
 .none {
   display: none;
