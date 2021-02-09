@@ -25,15 +25,26 @@ export default function Profiles() {
 
   return (
     <div className={style.main}>
-      <div className={style.search}>
-        <div className={style.searchHeader}>Search:</div>
-        <input
-          className={style.searchField}
-          type="text"
-          placeholder="Who do you want to find?"
-          value={search}
-          onChange={updateLocalSearch}
-        />
+      <div className={style.sectionFilterBar}>
+        <div className={style.sectionFilterBarActions}>
+          <div className={style.form}>
+            <div className={style.formInputSmallWithButton}>
+              <label
+                className={style.searchLabel}
+                htmlFor="friends-search"
+              >
+                Search
+              </label>
+              <input
+                className={style.friendsSearch}
+                type="text"
+                value={search}
+                onChange={updateLocalSearch}
+                id="friends-search"
+              />
+            </div>
+          </div>
+        </div>
       </div>
       {filteredProfiles.map((profile) => (
         <FriendRow
