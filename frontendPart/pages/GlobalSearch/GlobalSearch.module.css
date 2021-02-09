@@ -1,5 +1,6 @@
 .main {
   display: grid;
+  grid-auto-rows: max-content;
   grid-template-columns: 100%;
   grid-gap: 16px;
   align-items: start;

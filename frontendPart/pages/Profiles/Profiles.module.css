@@ -1,5 +1,16 @@
+label {
+  top: 16px;
+  font-size: 0.875rem;
+  color: #adafca;
+  font-weight: 600;
+  font-family: Rajdhani, sans-serif;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
 .main {
   display: grid;
+  grid-auto-rows: max-content;
   grid-template-columns: 100%;
   grid-gap: 16px;
   align-items: start;
@@ -9,38 +20,75 @@
   outline: none;
   box-sizing: border-box;
 }
-.none {
-  display: none;
+
+.sectionFilterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96px;
+  margin-top: 30px;
+  padding: 0 28px;
+  border-radius: 12px;
+  box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
+  background-color: #fff;
 }
 
-.search {
-  display: grid;
-  grid-template-columns: 1fr 2fr 5fr;
-  grid-template-areas: 'searchHeader searchField findButton';
+.sectionFilterBarActions {
+  display: flex;
+  align-items: center;
 }
 
-.searchHeader {
-  display: grid;
-  grid-area: searchHeader;
-  align-self: center;
-  justify-self: center;
+.form {
+  display: block;
+  width: 100%;
 }
 
-.searchField {
-  display: grid;
-  border-radius: 10px;
-  background-color: #4e4bc8;
-  grid-area: searchField;
-  align-self: center;
-  width: 200px;
-  height: 25px;
+.formInputSmallWithButton {
+  position: relative;
+  width: 240px;
+  font-size: 80%;
+  font-weight: 400;
 }
 
-.findButton {
-  display: grid;
-  grid-area: findButton;
-  align-self: center;
-  margin-left: 10px;
-  width: 50px;
-  height: 25px;
+.searchLabel {
+  top: 16px;
+  font-family: Rajdhani, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #adafca;
+  left: 20px;
+}
+
+.friendsSearch {
+  padding-right: 82px;
+  height: 48px;
+  font-size: 0.875rem;
+  padding: 0 18px;
+  background-color: #fff;
+  border: 1px solid #dedeea;
+  color: #3e3f5e;
+  transition: border-color 0.2s ease-in-out;
+  width: 100%;
+  outline: none;
+  border-radius: 12px;
+}
+
+.friendsSearch:focus {
+  border-color: #615dfa;
+}
+.friendsSearch:focus .searchLabel {
+  background-color: #fff;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  top: -6px;
+  left: 12px;
+}
+
+@media screen and (max-width: 490px) {
+  .formInputSmallWithButton {
+    width: 200px;
+  }
+  .sectionFilterBar {
+    width: auto;
+  }
 }
