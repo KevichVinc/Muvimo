@@ -199,3 +199,29 @@
     box-shadow: 3px 5px 20px 0 rgb(94 92 154 / 10%);
   }
 }
+
+@media screen and (max-width: 490px) {
+  .profileDescription {
+    width: auto;
+    height: 56px;
+    padding: 12px 0 0 32px;
+  }
+
+  .profileFullName {
+    color: #3e3f5e;
+    font-family: Rajdhani, sans-serif;
+    line-height: 1em;
+    font-weight: 700;
+    text-align: left;
+    font-size: 0.7rem;
+  }
+
+  .profileStatus {
+    text-align: left;
+    font-size: 0.4rem;
+    margin-top: 10px;
+    color: #adafca;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
