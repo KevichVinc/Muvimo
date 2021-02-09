@@ -32,7 +32,10 @@ router.get('/profile/:id', async (req, res) => {
   }
 });
 router.get('/find', async (req, res) => {
-  if (req.query.firstName === '') {
+  if (
+    req.query.firstName === '' ||
+    req.query.firstName === 'undefined'
+  ) {
     res.json(null);
   }
   try {

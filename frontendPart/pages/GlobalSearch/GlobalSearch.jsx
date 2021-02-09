@@ -17,16 +17,19 @@ export default function GlobalSearch() {
 
   useEffect(() => {
     const parsed = queryString.parse(history.location.search);
-    dispatch(appAC.updateSearch(parsed.firstName));
-    dispatch(appAC.findByFirstName(parsed));
+    if (parsed.firstName.length !== 0) {
+      dispatch(appAC.findByFirstName(history.location.search));
+    }
   }, []);
 
   useEffect(() => {
-    history.push({
-      pathname: '/find',
-      search: `?firstName=${search}`,
-    });
-    dispatch(appAC.findByFirstName(history.location.search));
+    if (search.length !== 0) {
+      history.push({
+        pathname: '/find',
+        search: `?firstName=${search}`,
+      });
+      dispatch(appAC.findByFirstName(history.location.search));
+    }
   }, [search]);
 
   const updateFirstName = (e) => {

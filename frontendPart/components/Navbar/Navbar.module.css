@@ -17,3 +17,28 @@
   border-radius: 5px;
   color: #ffffff;
 }
+.iconMenu {
+  display: none;
+}
+.item a.active {
+  background-color: #22d2e2;
+  width: min-content;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.item img {
+  width: 24px;
+  margin: 5px;
+}
+@media screen and (max-width: 570px) {
+  .nav {
+    width: 50px;
+  }
+  .textMenu {
+    display: none;
+  }
+  .iconMenu {
+    display: flex;
+  }
+}
