@@ -3,12 +3,11 @@
 html,
 body {
   font-family: 'Titillium Web', sans-serif;
-  box-sizing: border-box;
+  overflow-x: hidden;
   margin: 0;
 }
 .main {
   display: flex;
-  min-height: calc(100vh - 40vh);
 }
 .content {
   display: flex;
@@ -18,6 +17,7 @@ body {
 .main nav {
   order: -1;
   flex: 0 0 10vw;
+  min-height: 100vh;
 }
 header,
 content,
