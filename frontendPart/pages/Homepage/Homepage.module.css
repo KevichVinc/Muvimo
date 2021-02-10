@@ -1,0 +1,33 @@
+/* .main {
+  width: 1800px;
+  height: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.5);
+} */
+.homeBackground {
+  display: flex;
+  margin-top: 30px;
+  width: 1600px;
+  height: 800px;
+  opacity: 0.85;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  background: url(../../assets/img/runner.jpg) center center;
+}
+.text {
+  display: flex;
+}
+.welcome {
+  font-size: 4rem;
+  font-weight: 400;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.artincubator {
+  font-size: 7rem;
+  font-weight: 900;
+  opacity: none;
+  color: white;
+}
