@@ -1,16 +1,16 @@
 .main {
   order: -1;
   min-height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.5);
 }
 
 .nav {
-  min-height: 100vh;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700;
   width: min-content;
   padding-bottom: 40px;
   background-color: #fff;
-  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.5);
 }
 .navMini {
   display: none;
@@ -41,7 +41,7 @@
   background-color: #e7e8ee;
   display: flex;
   border-radius: 5px;
-  transition: 0.4s;
+  transition: 0.4s ease-in-out;
 }
 
 .item img {
@@ -68,7 +68,7 @@
     width: max-content;
   }
 }
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 650px) {
   .nav {
     display: none;
   }
@@ -81,7 +81,6 @@
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     background-color: #fff;
-    box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.5);
     display: flex;
     min-height: 100vh;
   }
@@ -92,6 +91,6 @@
     border-radius: 50%;
     background-color: #22d2e2;
     box-shadow: 0 0 20px 0 rgb(71, 240, 255, 0.5);
-    transition: 0.4s;
+    transition: 0.4s ease-in-out;
   }
 }

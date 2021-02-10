@@ -63,7 +63,7 @@ export default function Navbar() {
             className={style.textMenu}
             activeClassName={style.active}
           >
-            Global Search
+            Search
           </NavLink>
         </div>
       </nav>

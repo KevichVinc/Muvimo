@@ -11,7 +11,7 @@ export default function Avatar() {
 
   return (
     <div>
-      Avatar:
+      <div>Avatar:</div>
       <input
         type="text"
         placeholder="Add URL link"

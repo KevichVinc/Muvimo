@@ -48,7 +48,7 @@ export default function GlobalSearch() {
                 className={style.searchLabel}
                 htmlFor="friends-search"
               >
-                Search
+                Global Search
               </label>
               <input
                 className={style.friendsSearch}
