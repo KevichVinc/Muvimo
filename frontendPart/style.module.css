@@ -15,7 +15,7 @@ body {
   justify-content: center;
   flex-grow: 1;
 }
-.main nav {
+.main navbar {
   order: -1;
   flex: 0 0 10vw;
   min-height: 100vh;

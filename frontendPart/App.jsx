@@ -38,7 +38,7 @@ export default function App() {
             render={() => <Profile />}
           />
         </div>
-        <Navbar className={style.nav} />
+        <Navbar className={style.navbar} />
       </div>
     </div>
   );
