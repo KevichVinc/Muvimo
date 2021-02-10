@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useParams, NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 import style from './Profile.module.css';
 import * as appAC from '../../redux/actionCreators/profiles';
+import rusflag from '../../assets/img/russia.png';
 
 import Avatar from './Avatarbox/Avatar';
 import Avataredit from './Avatarbox/Avataredit';
@@ -18,38 +20,39 @@ export default function Profile() {
   const { id } = useParams();
   useEffect(() => dispatch(appAC.findProfileById(id)), []);
   return (
-    <div className={style.main}>
-      <div className={style.avatar}>
-        <Avatar />
+    <div className={style.contentGrid}>
+      <div className={style.profileHeader}>
+        <div className={style.headerCover} />
+        <div className={style.headerInfo}>
+          <Avatar />
+
+          <div className={style.headerSocialLinksWrap}></div>
+          <div className={style.userStats}>
+            <div className={style.counter}>
+              <div className={style.title}>930</div>
+              <div className={style.text}>POSTS</div>
+            </div>
+            <div className={style.counter}>
+              <div className={style.title}>82</div>
+              <div className={style.text}>FRIENDS</div>
+            </div>
+            <div className={style.counter}>
+              <div className={style.title}>17</div>
+              <div className={style.text}>PROJECTS</div>
+            </div>
+            <div className={style.counter}>
+              <img className={style.img} src={rusflag} alt="RUSSIA" />
+              <div className={style.textFlag}>RUSSIA</div>
+            </div>
+          </div>
+          <div className={style.headerInfoActions}>
+            <div className={style.addFriend}>Add Friend +</div>
+            <div className={style.sendMessage}>Send Message</div>
+          </div>
+        </div>
       </div>
-      <div className={style.avataredit}>
-        <Avataredit />
-      </div>
-      <div className={style.profileinfo}>
-        <Infobox />
-      </div>
-      <div className={style.friends}>
-        <Friendsbox />
-      </div>
-      <div className={style.posts}>
-        <Post />
-      </div>
-      <div className={style.friendsOnline}>
-        <Friendsbox />
-      </div>
-      <div className={style.addpost}>
-        <Addpost />
-      </div>
-      <div className={style.posts}>
-        <Post />
-      </div>
-      <div className={style.portfolio}>
-        <Portfolio />
-      </div>
-      <div className={style.posts}>
-        <Post />
-        <Post />
-      </div>
+      <div className={style.sectionNavigation}></div>
+      <div className={style.profileContentGrid}></div>
     </div>
   );
 }
