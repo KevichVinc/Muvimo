@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
+import Homepage from './pages/Homepage/Homepage';
 import Profiles from './pages/Profiles/Profiles';
 import Settings from './pages/Settings/Settings';
 import Portfolio from './components/Portfolio/Portfolio';
@@ -21,6 +22,7 @@ export default function App() {
       <Header className={style.header} />
       <div className={style.main}>
         <div className={style.content}>
+          <Route exact path="/" render={() => <Homepage />} />
           <Route exact path="/profiles" render={() => <Profiles />} />
           <Route path="/settings" render={() => <Settings />} />
           <Route path="/portfolio" render={() => <Portfolio />} />
