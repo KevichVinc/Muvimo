@@ -26,19 +26,23 @@ export default function EditProfile() {
 
   return (
     <div className={style.main}>
-      <Avatar />
-      <Firstname />
-      <Lastname />
-      <Age />
-      <City />
-      <Skills />
-      <Favorites />
-      <button type="button" onClick={editProfile}>
-        Edit profile
-      </button>
-      <button type="button" onClick={deleteProfileById}>
-        Delete profile
-      </button>
+      <div className={style.inputs}>
+        <Avatar />
+        <Firstname />
+        <Lastname />
+        <Age />
+        <City />
+        <Skills />
+        <Favorites />
+      </div>
+      <div className={style.buttons}>
+        <button type="button" onClick={editProfile}>
+          Edit profile
+        </button>
+        <button type="button" onClick={deleteProfileById}>
+          Delete profile
+        </button>
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ import style from './style.module.css';
 export default function App() {
   return (
     <div className={style.body}>
-      <Header />
+      <Header className={style.header} />
       <div className={style.main}>
         <div className={style.content}>
           <Route exact path="/profiles" render={() => <Profiles />} />
