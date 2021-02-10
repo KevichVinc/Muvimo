@@ -13,9 +13,11 @@ label {
   grid-auto-rows: max-content;
   grid-template-columns: 100%;
   grid-gap: 16px;
+
   align-items: start;
   margin: 0;
   padding: 0;
+
   border: none;
   outline: none;
   box-sizing: border-box;
@@ -25,9 +27,11 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   height: 96px;
   margin-top: 30px;
   padding: 0 28px;
+
   border-radius: 12px;
   box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
   background-color: #fff;
@@ -51,12 +55,11 @@ label {
 }
 
 .searchLabel {
-  top: 16px;
   font-family: Rajdhani, sans-serif;
-  font-size: 0.875rem;
   font-weight: 600;
+  font-size: 0.875rem;
+
   color: #adafca;
-  left: 20px;
 }
 
 .friendsSearch {
@@ -85,10 +88,26 @@ label {
 }
 
 @media screen and (max-width: 490px) {
+  .sectionFilterBar {
+    height: 66px;
+  }
+  .friendsSearch {
+    height: 34px;
+  }
   .formInputSmallWithButton {
-    width: 200px;
+    width: 140px;
   }
   .sectionFilterBar {
     width: auto;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .formInputSmallWithButton {
+    width: 120px;
+  }
+  .friendsSearch {
+    height: 24px;
+    width: 80px;
   }
 }

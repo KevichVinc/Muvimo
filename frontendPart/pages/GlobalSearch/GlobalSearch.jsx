@@ -40,14 +40,24 @@ export default function GlobalSearch() {
 
   return (
     <div className={style.main}>
-      <div className={style.search}>
-        <div className={style.searchHeader}>Glodal Search:</div>
-        <input
-          className={style.searchField}
-          type="text"
-          placeholder="Find By First Name"
-          onChange={debounced}
-        />
+      <div className={style.sectionFilterBar}>
+        <div className={style.sectionFilterBarActions}>
+          <div className={style.form}>
+            <div className={style.formInputSmallWithButton}>
+              <label
+                className={style.searchLabel}
+                htmlFor="friends-search"
+              >
+                Search
+              </label>
+              <input
+                className={style.friendsSearch}
+                type="text"
+                onChange={debounced}
+              />
+            </div>
+          </div>
+        </div>
       </div>
       {profiles.map((profile) => (
         <FriendRow
