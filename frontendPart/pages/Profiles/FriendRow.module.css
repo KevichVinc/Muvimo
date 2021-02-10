@@ -1,10 +1,10 @@
 .main {
   display: flex;
-  align-items: center;
-  height: 100px;
-  padding-left: 84px;
   position: relative;
+  align-items: center;
+  padding-left: 84px;
 
+  height: 100px;
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
@@ -15,11 +15,12 @@
   margin: 0;
   top: 0;
   left: 0;
+  width: 84px;
+  height: 100%;
+
   border-top-right-radius: 0;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-  width: 84px;
-  height: 100%;
 }
 
 .profilePreviewInfo {
@@ -35,19 +36,20 @@
 .profileDescription {
   display: block;
   position: relative;
+  padding: 12px 0 0 32px;
   width: 200px;
   height: 56px;
-  padding: 12px 0 0 32px;
 }
 
 .profileDescriptionAvatar {
   display: block;
   position: absolute;
   left: -25px;
-  width: 50px;
-  height: 56px;
   top: 1;
   margin-left: 0;
+
+  width: 50px;
+  height: 56px;
 }
 
 .profileAvaWrapper {
@@ -58,12 +60,13 @@
 }
 
 .profileAvaWrapper .roundBorder {
+  position: relative;
   width: 50px;
   height: 56px;
-  position: relative;
-  background-color: white;
+
   border-width: 4px;
   border-radius: 10px;
+  background-color: white;
 }
 
 .profileAvaContent {
@@ -74,28 +77,32 @@
 }
 
 .profileAvaContent .roundedAva {
+  position: relative;
   width: 40px;
   height: 44px;
   border-width: 4px;
   border-radius: 10px;
-  position: relative;
 }
 
 .profileFullName {
-  color: #3e3f5e;
-  font-family: Rajdhani, sans-serif;
-  line-height: 1em;
-  font-weight: 700;
   text-align: left;
+
+  font-family: Rajdhani, sans-serif;
+  font-weight: 700;
   font-size: 0.9rem;
+  line-height: 1em;
+
+  color: #3e3f5e;
 }
 
 .profileStatus {
   text-align: left;
-  font-size: 0.6rem;
   margin-top: 10px;
-  color: #adafca;
+
   font-weight: 700;
+  font-size: 0.6rem;
+  color: #adafca;
+
   text-transform: uppercase;
 }
 
@@ -105,47 +112,46 @@
   margin-top: 0;
 }
 
-@media only screen and (max-width: 840px) {
-  .profileStats {
-    display: none;
-  }
-}
-
 .profileStats .profileStat {
   position: relative;
   padding: 0 24px;
 }
 
 .profileStats .profileStat::after {
-  content: '';
-  width: 1px;
-  height: 20px;
-  background-color: #eaeaf5;
   position: absolute;
   top: 6px;
   right: 0;
+
+  width: 1px;
+  height: 20px;
+
+  content: '';
+  background-color: #eaeaf5;
 }
 .profileStats .profileStat:last-child::after {
   display: none;
 }
 
 .profileStats .profileStat .statTitle {
+  text-align: center;
   margin: 0;
   margin-top: 10px;
-  color: #adafca;
+
   font-size: 0.6875rem;
   font-weight: 700;
+  color: #adafca;
+
   text-transform: uppercase;
-  text-align: center;
 }
 
 .profileStats .profileStat .statCounter {
-  margin: 0;
-  color: #3e3f5e;
-  font-weight: 700;
-  font-size: 0.875rem;
   text-transform: uppercase;
   text-align: center;
+  margin: 0;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #3e3f5e;
 }
 
 .profilePreviewActions {
@@ -154,13 +160,15 @@
 }
 
 .profilePreviewActions .privacyStatus {
-  justify-content: center;
   display: flex;
   position: static;
-  margin-right: 12px;
+  justify-content: center;
   align-items: center;
+
+  margin-right: 12px;
   width: 44px;
   height: 44px;
+
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 3px 5px 20px 0 rgb(94 92 154 / 10%);
@@ -170,14 +178,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 64px;
   height: 44px;
+
   background-color: #615dfa;
   box-shadow: 4px 7px 12px 0 rgb(97 93 250 / 20%);
   border-radius: 10px;
 }
 
-@media screen and (max-width: 570px) {
+@media only screen and (max-width: 880px) {
+  .profileStats {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 620px) {
   .profileStats {
     display: none;
   }
@@ -187,9 +203,9 @@
   }
 
   .profilePreviewActions > .privacyStatus {
-    justify-content: center;
     display: flex;
     position: static;
+    justify-content: center;
     margin-right: 0px;
     align-items: center;
     width: 44px;
@@ -200,28 +216,88 @@
   }
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 460px) {
+  .main {
+    padding-left: 54px;
+    height: 80px;
+  }
+  .profilePhoto {
+    width: 54px;
+  }
   .profileDescription {
-    width: auto;
+    width: 160px;
     height: 56px;
-    padding: 12px 0 0 32px;
+  }
+  .profileDescriptionAvatar {
+    width: 44px;
+    height: 50px;
+  }
+
+  .profileAvaWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .profileAvaWrapper .roundBorder {
+    width: 44px;
+    height: 50px;
+
+    border-width: 2px;
+  }
+
+  .profileAvaContent {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    z-index: 3;
+  }
+
+  .profilePreviewActions > .inviteFriend {
+    width: 44px;
+    height: 34px;
+  }
+  .profilePreviewActions > .privacyStatus {
+    width: 34px;
+    height: 34px;
+  }
+
+  .profileAvaContent .roundedAva {
+    position: relative;
+    width: 32px;
+    height: 38px;
+    border-width: 2px;
+    border-radius: 10px;
   }
 
   .profileFullName {
-    color: #3e3f5e;
-    font-family: Rajdhani, sans-serif;
-    line-height: 1em;
-    font-weight: 700;
     text-align: left;
     font-size: 0.7rem;
+    font-weight: 700;
+
+    line-height: 1em;
   }
 
   .profileStatus {
     text-align: left;
-    font-size: 0.4rem;
     margin-top: 10px;
-    color: #adafca;
+
+    font-size: 0.4rem;
     font-weight: 700;
+    color: #adafca;
+
     text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .profileDescription {
+    width: 80px;
+    height: 56px;
+    padding: 12px 0 0 20px;
+  }
+  .profileStatus {
+    margin-top: 0;
   }
 }
