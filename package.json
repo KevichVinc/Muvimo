@@ -1,11 +1,11 @@
 {
-  "homepage": "http://kevichvinc.github.io/Muvimo", 
   "name": "frontend-part",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "build": "webpack --mode production",
     "start": "npm run start:front | npm run start:back",
     "start:front": "webpack serve --config ./webpack.config.js --mode development",
     "start:back": "node server.js",
