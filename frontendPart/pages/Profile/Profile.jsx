@@ -1,19 +1,21 @@
 import React, { useEffect } from 'react';
-import { useParams, NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom'; // need NavLink later
+import { useDispatch } from 'react-redux'; // need useSelector later
 
 import style from './Profile.module.css';
 import * as appAC from '../../redux/actionCreators/profiles';
 import rusflag from '../../assets/img/russia.png';
 
 import Avatar from './Avatarbox/Avatar';
-import Avataredit from './Avatarbox/Avataredit';
-import Infobox from './Infobox/Infobox';
-import Friendsbox from './Friendsbox/Friendsbox';
+// import Avataredit from './Avatarbox/Avataredit';
+// import Infobox from './Infobox/Infobox';
+// import Friendsbox from './Friendsbox/Friendsbox';
 
-import Addpost from './Addpost/Addpost';
-import Post from './Posts/Post';
-import Portfolio from './Portfolio/Portfolio';
+// import Addpost from './Addpost/Addpost';
+// import Post from './Posts/Post';
+// import Portfolio from './Portfolio/Portfolio';
+
+// divs with next classNames - headerSocialLinksWrap, sectionNavigation & profileContentGrid will not be self-closing
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -26,7 +28,7 @@ export default function Profile() {
         <div className={style.headerInfo}>
           <Avatar />
 
-          <div className={style.headerSocialLinksWrap}></div>
+          <div className={style.headerSocialLinksWrap} />
           <div className={style.userStats}>
             <div className={style.counter}>
               <div className={style.title}>930</div>
@@ -51,8 +53,8 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <div className={style.sectionNavigation}></div>
-      <div className={style.profileContentGrid}></div>
+      <div className={style.sectionNavigation} />
+      <div className={style.profileContentGrid} />
     </div>
   );
 }

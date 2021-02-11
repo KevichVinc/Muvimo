@@ -29,18 +29,12 @@ export default function Profiles() {
         <div className={style.sectionFilterBarActions}>
           <div className={style.form}>
             <div className={style.formInputSmallWithButton}>
-              <label
-                className={style.searchLabel}
-                htmlFor="friends-search"
-              >
-                Search
-              </label>
+              <div className={style.searchLabel}>Search</div>
               <input
                 className={style.friendsSearch}
                 type="text"
                 value={search}
                 onChange={updateLocalSearch}
-                id="friends-search"
               />
             </div>
           </div>
