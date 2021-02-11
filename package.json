@@ -1,8 +1,11 @@
 {
+  "homepage": "http://kevichvinc.github.io/Muvimo", 
   "name": "frontend-part",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "npm run start:front | npm run start:back",
     "start:front": "webpack serve --config ./webpack.config.js --mode development",
     "start:back": "node server.js",
@@ -29,6 +32,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "eslint-webpack-plugin": "^2.4.3",
+    "gh-pages": "^3.1.0",
     "prettier": "^2.2.1",
     "react-hot-loader": "^4.13.0",
     "react-router-dom": "^5.2.0",
