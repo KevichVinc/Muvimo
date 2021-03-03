@@ -5,6 +5,10 @@ import { useDispatch } from 'react-redux'; // need useSelector later
 import style from './Profile.module.css';
 import * as appAC from '../../redux/actionCreators/profiles';
 import rusflag from '../../assets/img/russia.png';
+import fb from '../../assets/icons/facebook.png';
+import tw from '../../assets/icons/twitter.png';
+import inst from '../../assets/icons/instagram.png';
+import telegram from '../../assets/icons/telegram.png';
 
 import Avatar from './Avatarbox/Avatar';
 // import Avataredit from './Avatarbox/Avataredit';
@@ -27,8 +31,48 @@ export default function Profile() {
         <div className={style.headerCover} />
         <div className={style.headerInfo}>
           <Avatar />
-
-          <div className={style.headerSocialLinksWrap} />
+          <div className={style.headerSocialLinksWrap}>
+            <div
+              className={style.socialMediaButtonWrapper}
+              id="facebook"
+            >
+              <img
+                src={fb}
+                alt="FB"
+                className={style.socialMediaButton}
+              />
+            </div>
+            <div
+              className={style.socialMediaButtonWrapper}
+              id="twitter"
+            >
+              <img
+                src={tw}
+                alt="TW"
+                className={style.socialMediaButton}
+              />
+            </div>
+            <div
+              className={style.socialMediaButtonWrapper}
+              id="instagram"
+            >
+              <img
+                src={inst}
+                alt="INST"
+                className={style.socialMediaButton}
+              />
+            </div>
+            <div
+              className={style.socialMediaButtonWrapper}
+              id="youtube"
+            >
+              <img
+                src={telegram}
+                alt="tg"
+                className={style.socialMediaButton}
+              />
+            </div>
+          </div>
           <div className={style.userStats}>
             <div className={style.counter}>
               <div className={style.title}>930</div>
