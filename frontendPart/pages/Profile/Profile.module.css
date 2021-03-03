@@ -1,59 +1,3 @@
-/* .main {
-  display: grid;
-  align-items: center;
-  grid-template-areas:
-    'avatar profileinfo'
-    'avataredit addpost'
-    'friends posts'
-    'friendsOnline posts'
-    'portfolio posts'
-    'groups posts';
-  grid-auto-rows: min-content;
-  grid-template-columns: 2fr 4fr;
-  grid-gap: 10px;
-}
-
-.avatar {
-  grid-area: avatar;
-}
-
-.avataredit {
-  grid-area: avataredit;
-}
-
-.profileinfo {
-  grid-area: profileinfo;
-}
-
-.addpost {
-  grid-area: addpost;
-}
-
-.portfolio {
-  grid-area: portfolio;
-}
-
-.friends {
-  grid-area: friends;
-  display: subgrid;
-  grid-template-areas:
-    'o'
-    'f';
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-  grid-gap: 5px;
-}
-.friendsOnline {
-  grid-area: friendsOnline;
-  display: subgrid;
-  grid-template-areas:
-    'o'
-    'f';
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-  grid-gap: 5px;
-} */
-
 .contentGrid {
   width: 90%;
   padding: 60px 0 100px;
@@ -133,6 +77,9 @@
 }
 
 .profileHeader .headerInfo .headerSocialLinksWrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   position: absolute;
   top: 54px;
   right: 32px;
@@ -141,6 +88,7 @@
   width: 352px;
   height: 44px;
 }
+
 .profileHeader .headerInfo .userStats {
   display: flex;
   position: absolute;
@@ -181,6 +129,7 @@
   font-family: Rajdhani, sans-serif;
   line-height: 1em;
 }
+
 .text {
   margin-top: 10px;
   color: #adafca;
@@ -213,6 +162,25 @@
 }
 
 /*HEADER COUNTERS*/
+
+/* HEADER SOCIAL BUTTONS*/
+.socialMediaButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  background-color: #615dfa;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.socialMediaButton {
+  width: 18px;
+  height: 18px;
+}
+/* HEADER SOCIAL BUTTONS*/
 
 .profileHeader .headerInfo .headerInfoActions {
   display: flex;
@@ -290,4 +258,152 @@
 
   margin-top: 16px;
   align-items: start;
+}
+
+@media screen and (max-width: 1365px) {
+  .profileHeader .headerInfo {
+    height: auto;
+    padding-bottom: 32px;
+  }
+  .profileHeader .headerInfo .headerInfoActions,
+  .profileHeader .headerInfo .headerSocialLinksWrap,
+  .profileHeader .headerInfo .userStats {
+    position: static;
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .profileHeader .headerInfo {
+    height: auto;
+    padding-bottom: 32px;
+  }
+  .profileHeader .headerInfo .headerInfoActions,
+  .profileHeader .headerInfo .headerSocialLinksWrap,
+  .profileHeader .headerInfo .userStats {
+    position: static;
+    padding: 12px;
+  }
+  .profileHeader .headerInfo .headerInfoActions .addFriend,
+  .profileHeader .headerInfo .headerInfoActions .sendMessage {
+    width: 114px;
+  }
+
+  .profileHeader .headerInfo .userStats .counter {
+    position: relative;
+    padding: 0 10px;
+    text-align: center;
+  }
+  .profileHeader .headerInfo .userStats .counter:last-child {
+    display: none;
+  }
+
+  .counter:nth-child(3)::after {
+    display: none;
+  }
+
+  .counter::after {
+    position: absolute;
+    top: 8px;
+    right: 0;
+
+    width: 1px;
+    height: 15px;
+
+    content: '';
+    background-color: #eaeaf5;
+  }
+
+  .text {
+    margin-top: 10px;
+    color: #adafca;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Rajdhani, sans-serif;
+    line-height: 1em;
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .textFlag {
+    margin-top: 6px;
+    color: #adafca;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Rajdhani, sans-serif;
+    line-height: 1em;
+  }
+
+  .img {
+    width: 24px;
+    height: 16px;
+    vertical-align: middle;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-style: none;
+  }
+
+  .profileHeader .headerInfo .headerSocialLinksWrap {
+    width: 230px;
+    height: 30px;
+  }
+
+  .profileHeader
+    .headerInfo
+    .headerSocialLinksWrap
+    .socialMediaButtonWrapper {
+    width: 30px;
+    height: 30px;
+  }
+  .profileHeader
+    .headerInfo
+    .headerSocialLinksWrap
+    .socialMediaButton {
+    width: 12px;
+    height: 12px;
+  }
+
+  .profileHeader .headerCover {
+    height: 115px;
+  }
+
+  .profileHeader .headerInfo .userShortDescription .avatarLink {
+    position: absolute;
+    margin-left: -74px;
+    top: -80px;
+    left: 55%;
+
+    width: 112px;
+    height: 128px;
+  }
+  .profileHeader
+    .headerInfo
+    .userShortDescription
+    .avatarLink
+    .avatarBorder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 112px;
+    height: 128px;
+  }
+  .profileHeader
+    .headerInfo
+    .userShortDescription
+    .avatarLink
+    .avatarContent {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    z-index: 5;
+    width: 84px;
+    height: 100px;
+  }
 }

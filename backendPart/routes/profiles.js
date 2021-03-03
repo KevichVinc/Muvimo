@@ -22,7 +22,6 @@ router.delete('/delete/:id', async (req, res) => {
   }
 });
 router.get('/profile/:id', async (req, res) => {
-  // тут изменил для теста путь
   try {
     const { id } = req.params;
     const profile = await Profile.findById(id);

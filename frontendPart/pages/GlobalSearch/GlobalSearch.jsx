@@ -44,12 +44,12 @@ export default function GlobalSearch() {
         <div className={style.sectionFilterBarActions}>
           <div className={style.form}>
             <div className={style.formInputSmallWithButton}>
-              <label
+              <div
                 className={style.searchLabel}
                 htmlFor="friends-search"
               >
                 Global Search
-              </label>
+              </div>
               <input
                 className={style.friendsSearch}
                 type="text"
